@@ -5,6 +5,5 @@ permalink: /link/
 icon: octicon-link-external
 ---
 
-###[东方星痕](http://www.lxy520.net/)
+###[Miravtech Corporation](http://www.miravtech.com)
 
-###[Cass](http://cassite.net/)

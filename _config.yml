@@ -29,7 +29,7 @@ baseurl: ""
 
 
 title: "Record Linkage blog"
-email: "dubuyuye@yeah.net"
+email: "razvnpp@gmail.com"
 description: "Boldly link what nobody had linked before."
 github_username:  "RazvanML"
 swiftype_searchId: "ncwR9a8S9CTx2q9SgsJm"
@@ -39,6 +39,6 @@ disqus_shortname: "razvanpopovici"
 
 #url: "http://blog.rainyalley.com"
 #imgrepo: "http://blog.rainyalley.com/static/img"
-url: "http://10.0.0.138:4001"
-imgrepo: "http://10.0.0.138:4001/static/img"
+url: "http://razvanml.github.io/reco-link/"
+imgrepo: "http://razvanml.github.io/reco-link/static/img"
 

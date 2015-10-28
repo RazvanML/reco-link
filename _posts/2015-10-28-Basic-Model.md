@@ -5,7 +5,7 @@ tags: record-linkage introduction model
 categories: Record Linkage
 ---
 
-This post provides an introduction in the preparation of the record linkage model. Given the example of the previous post, the easiest approach is to import data in a spreadsheet software (Microsoft Excel or Libre Office will do just fine) and to actually start record linkage.
+This post provides an introduction in the preparation of the record linkage model. Given the <a href="../../2015-10-25/Record-linkage-intro/">example of the previous post</a>, the easiest approach is to import data in a spreadsheet software (Microsoft Excel or Libre Office will do just fine) and to actually start record linkage.
 
 Let's prepare the file in the CSV format like:
 

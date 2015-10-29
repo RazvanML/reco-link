@@ -2,18 +2,16 @@
 <div id="floatingSocialShare">
 	<div class="top-left">
 		<a title="Share with facebook" class="facebook pop-upper"
-			href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}&amp;t={{ page.title }} "><i
-			class="m-top5 fa fa-facebook"></i></a>
-	<a title="Share with twitter"
+			href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}&amp;t={{page.title}}"><i
+			class="m-top5 fa fa-facebook"></i></a><a title="Share with twitter"
 			class="twitter pop-upper"
 			href="https://twitter.com/home?status={{ site.url }}{{ page.url }}"><i
-			class="m-top5 fa fa-twitter"></i></a>
-	<a title="Share with google-plus"
+			class="m-top5 fa fa-twitter"></i></a><a title="Share with google-plus"
 			class="google-plus pop-upper"
 			href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"><i
 			class="m-top5 fa fa-google-plus"></i></a><a title="Share with linkedin"
 			class="linkedin pop-upper"
-			href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title={{ page.title }}&amp;summary=&amp;source="><i
+			href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title={{page.title}}&amp;summary=Describe this blog.&amp;source="><i
 			class="m-top5 fa fa-linkedin"></i></a>
 			
 			<a title="Share with pinterest"
@@ -31,8 +29,9 @@
 			<header>
 				<h2>{{ page.title }}</h2>
 				<p class="post-meta">
-					<span class="octicon octicon-clock"></span> {{ page.date | date:"%b %-d, %Y" }}{% if page.author %} {{ page.author }}{%
-					endif %}{% if page.meta %} {{ page.meta }}{% endif %}
+					<span class="octicon octicon-clock"></span> {{ page.date | date:
+					"%b %-d, %Y" }}{% if page.author %} â€¢ {{ page.author }}{%
+					endif %}{% if page.meta %} â€¢ {{ page.meta }}{% endif %}
 				</p>
 				<p class="post-tag">
 					<span>{% for cat in page.categories %}<a
@@ -48,7 +47,6 @@
 			<hr class="boundary">
 			<article>{{content}}</article>
 			<hr class="boundary">
-
 		</div>
 		<div class="pad-min"></div>
 		<!--

@@ -11,10 +11,10 @@ isNavItem: true
 About myself, I am a software engineer and a researcher of data mining, big data and machine learning.
 
 
-If you need help with record linkage or data mining projects, please drop me an email at <div id="mail" style="font-weight:bold; font-style:italic">razvan@nospam.com</div></a>
+To contact me, please drop me an email at <div id="mail" style="font-weight:bold; font-style:italic">razvan@nospam.com</div></a>
 <script>document.getElementById("mail").innerHTML = "razvnpp"+String.fromCharCode(64)+"gmai"+"l.com";</script>
 
-My area of expertise are:
+My areas of expertise are:
 * data mining
 * distributed computation
 * database systems
@@ -22,6 +22,8 @@ My area of expertise are:
 * algorithm design
 * performance tuning of software
 * software architecture
+* Software development in Java,C, C++, Python and many more
+
 
 <h2>Colophon</h2>
 

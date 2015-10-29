@@ -214,13 +214,10 @@ It can be clearly seen that the first linkage is not a good match; both the addr
 It may be possible that multiple names from the left will match multiple names from the right. Due to our constraint of linking one or none, only one of the choices has been considered. Since equality is dichotomic, without a similarity measure, the decision of taking one record was merely random. Let us allow any number of linkages to be discovered: 
 
 ```xml
-		<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
-			rcard="ZEROONE" >
-			<rules>
-				<rule name="byname" lfield="name" rfield="name" type="EQUALITY" />
-			</rules>
+		<match name="matchperson" left="sales" right="support" lcard="ZEROTON"
+			rcard="ZEROTON" >
+			...
 		</match>
-	</matches>
 ```
 
 

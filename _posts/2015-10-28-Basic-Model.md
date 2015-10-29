@@ -155,3 +155,35 @@ Let's run the record linkage. Since we only have 10 records, the execution time 
     <figcaption>Record linkage report after the first run</figcaption>
 </figure>
 
+The issue now is that only matched names are displayed, which is not of help. It is desirable to extend the display, so that the whole record is been shown. To accomplish this we have to change the query originating the data source. The new entity code is changed as following:
+
+
+```xml
+		<left>
+			<entity name="sales" conn="testdata" shorttitle="name" title="name2">
+				<query><![CDATA[
+					select id,name , '<B>'+htmlfy(name)+'</B> <SMALL style=color:blue>'+htmlfy(address)+'</SMALL><BR><I>'+htmlfy(company)+'</I> <SMALL>'+htmlfy(products)+'</SMALL>' as name2 from list1
+					   ]]>
+				</query>
+				<fields>
+					<field name="id" alias="id_sales" cardinality="ONE" type="integer" />
+					<field name="name" cardinality="ONE" type="text" />
+					<field name="name2" cardinality="ONE" type="text" />
+				</fields>
+				<keys>
+					<key name="id" />
+				</keys>
+			</entity>
+		</left>
+```
+
+The shorttitle of the entity remains name, but the title gets a larger value, a which is a concatenation of all available data fields. The htmlfy function has to be defined as a stored procedure on the database level, and it shall escape any HTML control character encountered in the text. For this case, since we use a CSV JDBC driver, the function is actually defined at the driver level, though the following connection entry:
+
+```xml
+			<connection id="testdata" url="jdbc:relique:csv:data/test1"
+				dialect="csvjdbc">
+				<!-- <property name="raiseUnsupportedOperationException" value="false"></property> -->
+				<property name="function.htmlfy"
+					value="org.apache.commons.lang3.StringEscapeUtils.escapeHtml4(String)" />
+			</connection>
+```

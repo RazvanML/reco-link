@@ -142,3 +142,9 @@ The next section describes the matching rules. To be succint, only a single rule
 		</match>
 	</matches>
 ```
+
+Multiple ```<match>``` blocks can be created, in order to connect all of the entities defined in the ```<left>``` and ```<right>``` elements of ```<entities>```.  The ```lcard``` and ```rcard``` attributes define the cardinality of the record linkage. Each side can have a value of ```ZEROONE```,```ONE```,```ONETON``` or ```ZEROTON```. The cardinality defines how many connections can be performed with one element. I will detail this topic in a dedicated post.
+
+Each match will have one or more ```<rule>``` elements. They define the criteria used to match the entities. In our example, we only compare the ```name``` fields of the two entities, and request they to be equal.
+
+ 

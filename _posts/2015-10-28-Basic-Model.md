@@ -148,12 +148,13 @@ Multiple ```<match>``` blocks can be created, in order to connect all of the ent
 Each match will have one or more ```<rule>``` elements. They define the criteria used to match the entities. In our example, we only compare the ```name``` fields of the two entities, and request they to be equal.
 
  
-Let's run the record linkage. Since we only have 10 records, the execution time shall be under 2-3 seconds. The output can be either inspected visually, or it is provided as a linkage table.
+Let's run the record linkage. Since we only have 10 records, the execution time shall be under 2-3 seconds. The output can be either inspected visually, or it is provided as a linkage table below:
 
 <figure>
     <img src="{{'/static/img/recolink/match1.png' | prepend: site.baseurl | prepend: site.url }}" alt='missing' />
     <figcaption>Record linkage report after the first run</figcaption>
 </figure>
+
 
 The issue now is that only matched names are displayed, which is not of help. It is desirable to extend the display, so that the whole record is been shown. To accomplish this we have to change the query originating the data source. The new entity code is changed as following:
 

@@ -172,3 +172,5 @@ If instead 11 records there will be 11 thousand, the time to link the records wi
 </table>
 
 Modern record matching techniques are able to link even hundreds of millions of records in reasonable time.
+
+During this post I have only described the problem of record linkage, without attempting to provide any solution. The next posts will attempt different algorithms and reporting techniques to associate the provided sales and support data.

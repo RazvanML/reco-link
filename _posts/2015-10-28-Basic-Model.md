@@ -150,3 +150,8 @@ Each match will have one or more ```<rule>``` elements. They define the criteria
  
 Let's run the record linkage. Since we only have 10 records, the execution time shall be under 2-3 seconds. The output can be either inspected visually, or it is provided as a linkage table.
 
+<figure>
+    <img src='"{{'/static/img/recolink/match1.png' | prepend: site.baseurl | prepend: site.url }}"' alt='missing' />
+    <figcaption>Record linkage report after the first run</figcaption>
+</figure>
+

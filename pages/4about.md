@@ -7,7 +7,7 @@ published: true
 isNavItem: true
 ---
 
-<img src="{{'img/razvan.png' | prepend: site.baseurl | prepend: site.url }}" style="float:left">
+<img src="{{'/static/img/razvan.jpg' | prepend: site.baseurl | prepend: site.url }}" style="float:right">
 About myself, I am a software engineer and a researcher of data mining, big data and machine learning.
 
 

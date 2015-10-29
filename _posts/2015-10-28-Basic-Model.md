@@ -86,3 +86,59 @@ The file contains the model of the linkage. The first section describes the set 
 Each connection is described by its URL, user name and password. The data can be read from any connection. The local connection, provided by the attribute of the ```<dbconnections>``` is where the temporary data and linkage results are stored. Reading data from CSV files is being performed using the same approach as data being retrieved from a database.
 
 
+The next section modes the entities involved in the linkage. Each entity from the left section can be linked to an entity on the right section, as following:
+
+
+``` xml
+
+	<entities>
+		<left>
+			<entity name="sales" conn="testdata" shorttitle="name" title="name">
+				<query><![CDATA[
+					select id,name from list1
+					   ]]>
+				</query>
+				<fields>
+					<field name="id" alias="id_sales" cardinality="ONE" type="integer" />
+					<field name="name" cardinality="ONE" type="text" />
+				</fields>
+				<keys>
+					<key name="id" />
+				</keys>
+			</entity>
+		</left>
+		<right>
+			<entity name="support" conn="testdata" shorttitle="name"
+				title="name" >
+				<query><![CDATA[
+					select id,name from list2
+					   ]]>
+				</query>
+				<fields>
+					<field name="id" alias="id_support" cardinality="ONE" type="integer" />
+					<field name="name" cardinality="ONE" type="text" />
+				</fields>
+				<keys>
+					<key name="id" />
+				</keys>
+			</entity>
+		</right>
+	</entities>
+``` 
+Each entity has a query and a set of fields, extracted from the query.
+An entity can be defined by a compound primary key, composed of more than one field. Also, there are two special fields called ```title``` and ```shorttitle```, used for display and interactive operations.
+
+For exemplification purposes, only the ```name``` field is extracted from the provided CSV data.
+
+The next section describes the matching rules. To be succint, only a single rule is defined, the exact name similarity.
+
+```xml
+	<matches>
+		<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
+			rcard="ZEROONE" >
+			<rules>
+				<rule name="byname" lfield="name" rfield="name" type="EQUALITY" />
+			</rules>
+		</match>
+	</matches>
+```

@@ -156,6 +156,18 @@ Let's run the record linkage. Since we only have 10 records, the execution time 
 </figure>
 
 
+Also the SQL result shows that the record linkage identifies two record links. The identifiers of the primary keys of the two linked entities are the names provided by the ```alias``` attribute of the fields.
+
+```
+match2=# select * from matchperson;
+ id_sales | id_support
+----------+------------
+        3 |          3
+        6 |          7
+(2 rows)
+```
+
+
 The issue now is that only matched names are displayed, which is not of help. It is desirable to extend the display, so that the whole record is been shown. To accomplish this we have to change the query originating the data source. The new entity code is changed as following:
 
 
@@ -178,7 +190,11 @@ The issue now is that only matched names are displayed, which is not of help. It
 		</left>
 ```
 
-The shorttitle of the entity remains name, but the title gets a larger value, a which is a concatenation of all available data fields. The htmlfy function has to be defined as a stored procedure on the database level, and it shall escape any HTML control character encountered in the text. For this case, since we use a CSV JDBC driver, the function is actually defined at the driver level, though the following connection entry:
+The shorttitle of the entity remains name, but the title gets a larger value, a which is a concatenation of all available data fields.
+
+The same change will apply for the ```right``` entity. In a real-life record linkage environment the entities do not have the same structure, hence the expression used as description of entities will vary widely.
+
+The htmlfy function has to be defined as a stored procedure on the database level, and it shall escape any HTML control character encountered in the text. For this case, since we use a CSV JDBC driver, the function is actually defined at the driver level, though the following connection entry:
 
 ```xml
 			<connection id="testdata" url="jdbc:relique:csv:data/test1"
@@ -188,3 +204,42 @@ The shorttitle of the entity remains name, but the title gets a larger value, a 
 					value="org.apache.commons.lang3.StringEscapeUtils.escapeHtml4(String)" />
 			</connection>
 ```
+
+Running the linkage again, the following linkage report can be inspected:
+
+<figure>
+    <img src="{{'/static/img/recolink/match2.png' | prepend: site.baseurl | prepend: site.url }}" alt='missing' />
+    <figcaption>Record linkage report after the enhancing entities names run</figcaption>
+</figure>
+
+It can be clearly seen that the first linkage is not a good match; both the address, the company and the products are different.
+It may be possible that multiple names from the left will match multiple names from the right. Due to our constraint of linking one or none, only one of the choices has been considered. Since equality is dichotomic, without a similarity measure, the decision of taking one record was merely random. Let us allow any number of linkages to be discovered: 
+
+```xml
+		<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
+			rcard="ZEROONE" >
+			<rules>
+				<rule name="byname" lfield="name" rfield="name" type="EQUALITY" />
+			</rules>
+		</match>
+	</matches>
+```
+
+
+<figure>
+    <img src="{{'/static/img/recolink/match3.png' | prepend: site.baseurl | prepend: site.url }}" alt='missing' />
+    <figcaption>Record linkage after enabling multiple links for a record</figcaption>
+</figure>
+
+
+Once this report has been displayed, it turns clear that we have the same person stored twice in the database, once for the home address and company, and second for the employer. In this point, we can either mismatch the first link, validate the second link or both.
+
+<figure>
+    <img src="{{'/static/img/recolink/match4.png' | prepend: site.baseurl | prepend: site.url }}" alt='missing' />
+    <figcaption>Manual match and mismatch the record linkages</figcaption>
+</figure>
+
+With this changes done, the next run will properly identify the record linkages.
+
+
+With this post I have just scratched the surface of the capabilities delivered by my record linkage tool. In the next posts I will describe the heuristic matching capabilities, as well as associating together more than one entity linkage rule.

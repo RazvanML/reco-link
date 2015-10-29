@@ -77,7 +77,6 @@ The file contains the model of the linkage. The first section describes the set 
 			<connection id="local" url="jdbc:postgresql://127.1:5432/match2"
 				user="postgres" password="***" dialect="pgsql"/>
 			<connection id="testdata" url="jdbc:relique:csv:data/test1" dialect="csvjdbc">
-				<property name="raiseUnsupportedOperationException" value="false"></property>
 			</connection>
 		</connections>
 	</dbconnections>
@@ -199,7 +198,6 @@ The htmlfy function has to be defined as a stored procedure on the database leve
 ```xml
 			<connection id="testdata" url="jdbc:relique:csv:data/test1"
 				dialect="csvjdbc">
-				<!-- <property name="raiseUnsupportedOperationException" value="false"></property> -->
 				<property name="function.htmlfy"
 					value="org.apache.commons.lang3.StringEscapeUtils.escapeHtml4(String)" />
 			</connection>

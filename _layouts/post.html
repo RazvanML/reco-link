@@ -30,8 +30,8 @@
 				<h2>{{ page.title }}</h2>
 				<p class="post-meta">
 					<span class="octicon octicon-clock"></span> {{ page.date | date:
-					"%b %-d, %Y" }}{% if page.author %} â€¢ {{ page.author }}{%
-					endif %}{% if page.meta %} â€¢ {{ page.meta }}{% endif %}
+					"%b %-d, %Y" }}{% if page.author %} {{ page.author }}{%
+					endif %}{% if page.meta %} {{ page.meta }}{% endif %}
 				</p>
 				<p class="post-tag">
 					<span>{% for cat in page.categories %}<a
@@ -47,14 +47,7 @@
 			<hr class="boundary">
 			<article>{{content}}</article>
 			<hr class="boundary">
-			<!--         <div id="post-share" class="bdsharebuttonbox">
-              <a href="#" class="bds_more" data-cmd="more"></a>
-              <a href="#" class="bds_tsina" data-cmd="tsina" title="åˆ†äº«åˆ°æ–°æµªå¾®å�š"></a>
-              <a href="#" class="bds_weixin" data-cmd="weixin" title="åˆ†äº«åˆ°å¾®ä¿¡"></a>
-              <a href="#" class="bds_douban" data-cmd="douban" title="åˆ†äº«åˆ°è±†ç“£ç½‘"></a>
-              <a href="#" class="bds_fbook" data-cmd="fbook" title="åˆ†äº«åˆ°Facebook"></a>
-              <a href="#" class="bds_copy" data-cmd="copy" title="åˆ†äº«åˆ°å¤�åˆ¶ç½‘å�€"></a>
-          </div> -->
+
 		</div>
 		<div class="pad-min"></div>
 		<!--

@@ -15,6 +15,13 @@ If you need help with record linkage or data mining projects, please drop me an 
 <script>document.getElementById("mail").innerHTML = "razvnpp"+String.fromCharCode(64)+"gmai"+"l.com";</script>
 
 My area of expertise are:
+* data mining
+* distributed computation
+* database systems
+* reporting and decision support systems
+* algorithm design
+* performance tuning of software
+* software architecture
 
 <h2>Colophon</h2>
 

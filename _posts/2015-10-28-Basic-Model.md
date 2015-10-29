@@ -237,4 +237,4 @@ Once this report has been displayed, it turns clear that we have the same person
 With this changes done, the next run will properly identify the record linkages.
 
 
-With this post I have just scratched the surface of the capabilities delivered by my record linkage tool. In the next posts I will describe the heuristic matching capabilities, as well as associating together more than one entity linkage rule.
+With this post I have just scratched the surface of the capabilities delivered by my record linkage tool. In the next posts I will describe the heuristic matching capabilities, as well how to associate together more than one entity linkage rule.

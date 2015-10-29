@@ -148,3 +148,5 @@ Multiple ```<match>``` blocks can be created, in order to connect all of the ent
 Each match will have one or more ```<rule>``` elements. They define the criteria used to match the entities. In our example, we only compare the ```name``` fields of the two entities, and request they to be equal.
 
  
+Let's run the record linkage. Since we only have 10 records, the execution time shall be under 2-3 seconds. The output can be either inspected visually, or it is provided as a linkage table.
+

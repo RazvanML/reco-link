@@ -1,38 +1,53 @@
----
-layout: default
-styles: post.css
-scripts: [toc.js,post.js]
----
-<div class="social-share">
-  <ul class="socialcount socialcount-small inline-list">
-    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-    <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-    <li class="googleplus"><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
-  </ul>
-</div><!-- /.social-share -->
+--- layout: default styles: post.css scripts: [toc.js,post.js] ---
+<div id="floatingSocialShare">
+	<div class="top-left">
+		<a title="Share with facebook" class="facebook pop-upper"
+			href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}&amp;t=Welcome to the Neo-HPSTR Blog � Blog Title"><i
+			class="m-top5 fa fa-facebook"></i></a><a title="Share with twitter"
+			class="twitter pop-upper"
+			href="https://twitter.com/home?status={{ site.url }}{{ page.url }}"><i
+			class="m-top5 fa fa-twitter"></i></a><a title="Share with google-plus"
+			class="google-plus pop-upper"
+			href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"><i
+			class="m-top5 fa fa-google-plus"></i></a><a title="Share with linkedin"
+			class="linkedin pop-upper"
+			href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title=Welcome to the Neo-HPSTR Blog � Blog Title&amp;summary=Describe this nonsense.&amp;source="><i
+			class="m-top5 fa fa-linkedin"></i></a>
+			
+			<a title="Share with pinterest"
+			class="pinterest pop-upper"
+			href="https://pinterest.com/pin/create%2Fbutton/?url={{ site.url }}{{ page.url }}"><i
+			class="m-top5 fa fa-pinterest"></i></a>
+	</div>
+</div>
+
+<!-- /.social-share -->
 
 <div class="row">
-    <div class="content col-lg-9">
-        <div class="sheet post">
-          <header>
-            <h2>{{ page.title }}</h2>
-            <p class="post-meta">
-                <span class="octicon octicon-clock"></span> {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} â€¢ {{ page.author }}{% endif %}{% if page.meta %} â€¢ {{ page.meta }}{% endif %}
-            </p>
-            <p class="post-tag">
-                <span>{% for cat in page.categories %}<a href="{{ '/category' | prepend: site.baseurl | prepend: site.url }}/#{{ cat }}"><span class="octicon octicon-list-unordered"></span>&nbsp;{{ cat }}</a>{% endfor %}</span>
-                <span>{% for tag in page.tags %}
-                    <a class="word-keep" href="{{ '/tags' | prepend: site.baseurl | prepend: site.url }}/#{{ tag }}"><span class="octicon octicon-tag"></span>&nbsp;{{ tag }}</a>
-                    {% endfor %}
-                </span>
-            </p>
-          </header>
-          <hr class="boundary">
-          <article>
-            {{content}}
-          </article>
-          <hr class="boundary">
- <!--         <div id="post-share" class="bdsharebuttonbox">
+	<div class="content col-lg-9">
+		<div class="sheet post">
+			<header>
+				<h2>{{ page.title }}</h2>
+				<p class="post-meta">
+					<span class="octicon octicon-clock"></span> {{ page.date | date:
+					"%b %-d, %Y" }}{% if page.author %} â€¢ {{ page.author }}{%
+					endif %}{% if page.meta %} â€¢ {{ page.meta }}{% endif %}
+				</p>
+				<p class="post-tag">
+					<span>{% for cat in page.categories %}<a
+						href="{{ '/category' | prepend: site.baseurl | prepend: site.url }}/#{{ cat }}"><span
+							class="octicon octicon-list-unordered"></span>&nbsp;{{ cat }}</a>{%
+						endfor %}
+					</span> <span>{% for tag in page.tags %} <a class="word-keep"
+						href="{{ '/tags' | prepend: site.baseurl | prepend: site.url }}/#{{ tag }}"><span
+							class="octicon octicon-tag"></span>&nbsp;{{ tag }}</a> {% endfor %}
+					</span>
+				</p>
+			</header>
+			<hr class="boundary">
+			<article>{{content}}</article>
+			<hr class="boundary">
+			<!--         <div id="post-share" class="bdsharebuttonbox">
               <a href="#" class="bds_more" data-cmd="more"></a>
               <a href="#" class="bds_tsina" data-cmd="tsina" title="åˆ†äº«åˆ°æ–°æµªå¾®å�š"></a>
               <a href="#" class="bds_weixin" data-cmd="weixin" title="åˆ†äº«åˆ°å¾®ä¿¡"></a>
@@ -40,78 +55,59 @@ scripts: [toc.js,post.js]
               <a href="#" class="bds_fbook" data-cmd="fbook" title="åˆ†äº«åˆ°Facebook"></a>
               <a href="#" class="bds_copy" data-cmd="copy" title="åˆ†äº«åˆ°å¤�åˆ¶ç½‘å�€"></a>
           </div> -->
-        </div>
-        <div class="pad-min"></div>
-<!--
+		</div>
+		<div class="pad-min"></div>
+		<!--
         <div id="post-comment" class="sheet post">
             <div id="disqus_thread"></div>
         </div> -->
-        
-<div id="disqus_thread"></div>
 
-    </div>
-    <div class="content-navigation col-lg-3">
-      <div class="shadow-bottom-center" >
-        <div class="content-navigation-toc">
-            <div class="content-navigation-header">
-                <span class="octicon octicon-list-unordered"></span>&nbsp;Toc
-            </div>
-            <div class="content-navigation-list toc"></div>
-        </div>
-        <div class="content-navigation-tag">
-            <div class="content-navigation-header">
-                <span class="octicon octicon-list-unordered"></span>&nbsp;Tags
-            </div>
-            <div class="content-navigation-list">
-                <ul>
-                    {% for tag in page.tags %}
-                    <li>
-                        <a href="{{ '/tags' | prepend: site.baseurl | prepend: site.url }}#{{ tag }}"><span class="octicon octicon-tag"></span>&nbsp;{{ tag }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        <div class="content-navigation-related">
-            <div class="content-navigation-header">
-                <span class="octicon octicon-list-unordered"></span>&nbsp;Related
-            </div>
-            <div class="content-navigation-list">
-                <ul>
-                    {% assign postsAfterFilter = '-' | split: "-" %}
+		<div id="disqus_thread"></div>
 
-                    {% for p in site.posts %}
-                        {%if p.url != page.url %}
-                            {% assign commonTagCount = 0 %}
-
-                            {% for tag in p.tags %}
-                                {% if page.tags contains tag %}
-                                    {% assign commonTagCount = commonTagCount | plus: 1 %}
-                                {% endif %}
-                            {% endfor %}
-
-                            {% for cat in p.categories %}
-                                {% if page.categories contains cat %}
-                                    {% assign commonTagCount = commonTagCount | plus: 1 %}
-                                {% endif %}
-                            {% endfor %}
-
-                            {% if commonTagCount > 0 %}
-                                {% assign postsAfterFilter = postsAfterFilter | push: p %}
-                            {% endif %}
-                        {% endif %}
-                    {% endfor %}
-
-                    {% if postsAfterFilter.size > 0 %}
-                        {% for p in postsAfterFilter limit: 15 %}
-                            <li>
-                                <a href="{{ p.url | prepend: site.baseurl | prepend: site.url }}">{{ p.title }}</a>
-                            </li>
-                        {% endfor %}
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-      </div>
-    </div>
+	</div>
+	<div class="content-navigation col-lg-3">
+		<div class="shadow-bottom-center">
+			<div class="content-navigation-toc">
+				<div class="content-navigation-header">
+					<span class="octicon octicon-list-unordered"></span>&nbsp;Toc
+				</div>
+				<div class="content-navigation-list toc"></div>
+			</div>
+			<div class="content-navigation-tag">
+				<div class="content-navigation-header">
+					<span class="octicon octicon-list-unordered"></span>&nbsp;Tags
+				</div>
+				<div class="content-navigation-list">
+					<ul>
+						{% for tag in page.tags %}
+						<li><a
+							href="{{ '/tags' | prepend: site.baseurl | prepend: site.url }}#{{ tag }}"><span
+								class="octicon octicon-tag"></span>&nbsp;{{ tag }}</a></li> {% endfor %}
+					</ul>
+				</div>
+			</div>
+			<div class="content-navigation-related">
+				<div class="content-navigation-header">
+					<span class="octicon octicon-list-unordered"></span>&nbsp;Related
+				</div>
+				<div class="content-navigation-list">
+					<ul>
+						{% assign postsAfterFilter = '-' | split: "-" %} {% for p in
+						site.posts %} {%if p.url != page.url %} {% assign commonTagCount =
+						0 %} {% for tag in p.tags %} {% if page.tags contains tag %} {%
+						assign commonTagCount = commonTagCount | plus: 1 %} {% endif %} {%
+						endfor %} {% for cat in p.categories %} {% if page.categories
+						contains cat %} {% assign commonTagCount = commonTagCount | plus:
+						1 %} {% endif %} {% endfor %} {% if commonTagCount > 0 %} {%
+						assign postsAfterFilter = postsAfterFilter | push: p %} {% endif
+						%} {% endif %} {% endfor %} {% if postsAfterFilter.size > 0 %} {%
+						for p in postsAfterFilter limit: 15 %}
+						<li><a
+							href="{{ p.url | prepend: site.baseurl | prepend: site.url }}">{{
+								p.title }}</a></li> {% endfor %} {% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

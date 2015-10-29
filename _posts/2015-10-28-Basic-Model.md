@@ -41,7 +41,7 @@ ID,Name,Address,Company,Products
 ``` 
 The goal of the exercise is to establish a relation between the identifiers of the two sets, both provided on the first column.
 
-We will prepare the model of the record linkage, which is an XML file describing the relations between the entities. The model contains the connections to the databases, the entities to be linked (left to right) and the rules of linking. The basic structure of the file is shown below:
+We will prepare the model of the record linkage, which is an XML file describing the relations between the entities. The model contains the connections to the databases, the entities to be linked (left to right) and the rules of linking. The basic anatomy of the file is shown below:
 
 
 ``` xml
@@ -143,7 +143,7 @@ The next section describes the matching rules. To be succint, only a single rule
 	</matches>
 ```
 
-Multiple ```<match>``` blocks can be created, in order to connect all of the entities defined in the ```<left>``` and ```<right>``` elements of ```<entities>```.  The ```lcard``` and ```rcard``` attributes define the cardinality of the record linkage. Each side can have a value of ```ZEROONE```,```ONE```,```ONETON``` or ```ZEROTON```. The cardinality defines how many connections can be performed with one element. I will detail this topic in a dedicated post.
+Multiple ```<match>``` blocks can be created, in order to connect all of the entities defined in the ```<left>``` and ```<right>``` elements of ```<entities>```.  The ```lcard``` and ```rcard``` attributes define the cardinality of the record linkage. Each side can have a value of ```ZEROONE```,```ONE```,```ONETON``` or ```ZEROTON```. The cardinality defines how many linkages can be performed with one element. I will detail this topic in a dedicated post.
 
 Each match will have one or more ```<rule>``` elements. They define the criteria used to match the entities. In our example, we only compare the ```name``` fields of the two entities, and request they to be equal.
 

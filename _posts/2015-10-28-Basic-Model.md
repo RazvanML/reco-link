@@ -39,6 +39,7 @@ ID,Name,Address,Company,Products
 10,Mike Taylor,Unknown,Lockheed-M,Tera Product
 11,James Jones,"4789 Woodward Ave. Detroit , MI",Detroitics,"GigaProd,MegaProd"
 ``` 
+The goal of the exercise is to establish a relation between the identifiers of the two sets, both provided on the first column.
 
 We will prepare the model of the record linkage, which is an XML file describing the relations between the entities. The model contains the connections to the databases, the entities to be linked (left to right) and the rules of linking. The basic structure of the file is shown below:
 
@@ -46,7 +47,7 @@ We will prepare the model of the record linkage, which is an XML file describing
 ``` xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <matchdocument>
-	<dbconnections local="local">
+	<dbconnections>
           .......
 	</dbconnections>
 	<entities>
@@ -63,3 +64,25 @@ We will prepare the model of the record linkage, which is an XML file describing
 </matchdocument>
 
 ``` 
+
+The file contains the model of the linkage. The first section describes the set of database connections to retrieve data from:
+
+``` xml
+	<dbconnections local="local">
+		<drivers>
+			<driver>org.postgresql.Driver</driver>
+			<driver>org.relique.jdbc.csv.CsvDriver</driver>
+		</drivers>
+		<connections>
+			<connection id="local" url="jdbc:postgresql://127.1:5432/match2"
+				user="postgres" password="***" dialect="pgsql"/>
+			<connection id="testdata" url="jdbc:relique:csv:data/test1" dialect="csvjdbc">
+				<property name="raiseUnsupportedOperationException" value="false"></property>
+			</connection>
+		</connections>
+	</dbconnections>
+``` 
+
+Each connection is described by its URL, user name and password. The data can be read from any connection. The local connection, provided by the attribute of the ```<dbconnections>``` is where the temporary data and linkage results are stored. Reading data from CSV files is being performed using the same approach as data being retrieved from a database.
+
+

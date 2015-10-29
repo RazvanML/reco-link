@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Link
+title: Links
 permalink: /link/
 icon: octicon-link-external
 isNavItem: true

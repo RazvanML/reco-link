@@ -207,7 +207,7 @@ Running the linkage again, the following linkage report can be inspected:
 
 <figure>
     <img src="{{'/static/img/recolink/match2.png' | prepend: site.baseurl | prepend: site.url }}" alt='missing' />
-    <figcaption>Record linkage report after the enhancing entities names run</figcaption>
+    <figcaption>Record linkage report after the enhancing entities names - differences are highlighted</figcaption>
 </figure>
 
 It can be clearly seen that the first linkage is not a good match; both the address, the company and the products are different.
@@ -238,3 +238,4 @@ With this changes done, the next run will properly identify the record linkages.
 
 
 With this post I have just scratched the surface of the capabilities delivered by my record linkage tool. In the next posts I will describe the heuristic matching capabilities, as well how to associate together more than one entity linkage rule.
+

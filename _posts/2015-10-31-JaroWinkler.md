@@ -5,8 +5,8 @@ tags: record-linkage Jaro-Winkler multiple-criteria
 categories: Record Linkage
 ---
 
-The <a href="/reco-link/2015-10-28/Basic-Model/">previous post</a> relied exclusively on the exact match of name. Out of the ten names, 
-only two of them enjoyed the perfect equality. It is obvious that measuring the "degree of similarity" between the names will yield some better results. One such measure is the 
+The <a href="/reco-link/2015-10-28/Basic-Model/">previous post</a> relied exclusively on the exact match of name.  Out of the ten names, 
+only two of them enjoyed the perfect equality. Due to a coincidence, one of the two names was associated with a wrong record. It seems that perfect equality does not yield the necessary accuracy; on the other hand, measuring the "degree of similarity" between the names will yield some better results. One such measure is the 
 <a href="https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance">"Jaro-Winkler"</a> metric from <a href="#b1">[1]</a>. This measure returns a value between zero and one, with one for the equal strings and zero for the totally different strings. The measure factors in the composing letters of the string, their sequentiality as well as their position inside the string.
 
 To use this metric instead of plain string comparison, the entity match rule has to be changed accordingly:
@@ -122,9 +122,13 @@ Also, running the combination of the two techniques demonstrated produces a 100 
 </match>
 ```
 
+In this post was introduced a new matching rule type, the Jaro-Winkler distance. Also, the employment of multiple criteria relies on an adapted Bayesian inference described by Fellegi and Sunter in <a href="#b2">[2]</a>. Confidence levels can be computed for each score and factored in the final probability of two record linkage.
+
+While the perfect equality provides a natural way of identifiying candidate linkages, the Jaro-Winkler similarity does not provide such a vehicle. For this data set, all the possible candidates (```10 x 11 = 110```) were generated and computed. Larger data sets will require alternative methods of candidates generation, with the goal to avoid the quadratic complexity of the problem. 
 
 
 <h2> Bibliography </h2>
 
-<a name="b1"></a>[1] Winkler, W. E. (1990). "String Comparator Metrics and Enhanced Decision Rules in the Fellegi-Sunter Model of Record Linkage". Proceedings of the Section on Survey Research Methods (American Statistical Association): 354â€“359.
+<a name="b1"></a>[1] Winkler, W. E. (1990). "String Comparator Metrics and Enhanced Decision Rules in the Fellegi-Sunter Model of Record Linkage". Proceedings of the Section on Survey Research Methods (American Statistical Association): 354-359.
 
+<a name="b1"></a> [2] Fellegi, Ivan; Sunter, Alan (December 1969). "A Theory for Record Linkage". Journal of the American Statistical Association 64 (328): pp. 1183–1210. doi:10.2307/2286061. JSTOR 2286061.

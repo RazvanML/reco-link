@@ -82,7 +82,7 @@ To have a term of comparison, the manually curated matched and mismatches were d
 </figure>
 
 
-To address the second issue of the rule, the Jaro-Winkler metric can be used in establishing of the verdict confidence of each matching rule. 
+To address the second issue of the rule, the Jaro-Winkler score can be used in establishing of the verdict confidence of each matching rule. In this case, the rules deliver both a true/false verdict, and a confidence amount. The low confidence verdicts are considered less important than the high confidence ones.
 
 ```xml
 <match name="matchperson" left="sales" right="support" lcard="ZEROONE"

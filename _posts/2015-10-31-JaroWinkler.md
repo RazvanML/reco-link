@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using Jaro-Winkler to enhance the previous model
+title: Using Jaro-Winkler to enhance record linkage
 tags: record-linkage Jaro-Winkler multiple-criteria
 categories: Record Linkage
 ---

@@ -16,8 +16,7 @@ To use this metric instead of plain string comparison, the entity match rule has
 			rcard="ZEROONE" >
 			<rules>
 				<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER"  >
-					<score alpha="0.9" beta="0.9" threshold="0.85" >
-					</score>
+					<score alpha="0.9" beta="0.9" threshold="0.85" />
 				</rule>
 			</rules>
 		</match>
@@ -39,11 +38,48 @@ With this change, the result is as following (mismatches were marked manually):
 With this approach, the record linkage identified 10 linkages (this is the expected number), but out of them only five are correct. There are two causes contributing to this issue: first, the other data, like address, company and product are not used, and second, the quantitative part of the string similarity is discarded once passing the threshold.
 
 By signaling the mismatches, the result turns in:
+
 <figure>
-    <img src="{{'/static/img/recolink/jw3.png' | prepend: site.baseurl | prepend: site.url }}" alt='Record linkage report with Jaro-Winkler distance - second step' />
-    <figcaption>Record linkage report with Jaro-Winkler distance - second step</figcaption>
+    <img src="{{'/static/img/recolink/jw3.png' | prepend: site.baseurl | prepend: site.url }}" alt='Record linkage report with Jaro-Winkler distance - second run' />
+    <figcaption>Record linkage report with Jaro-Winkler distance - second run</figcaption>
 </figure>
 
+Once the first step mismatches have been highlighted, second step only performs three mistakes. By continuing to validate the correct linkages and mismatches, the linkage will turn to 100 percent.
+
+
+For small amounts of data it is possible the complete data curation. Unfortunately, on large sets of data no manual linkage is expected, probably except the records of elevated importance.
+
+To improve the accuracy, it is possible to use multiple linkage rules, below is the new configuration file:
+
+```xml
+		<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
+			rcard="ZEROONE">
+			<rules>
+				<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER">
+					<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
+				</rule>
+				<rule name="byaddress" lfield="address" rfield="address"
+					type="STR_JARO_WRINKLER">
+					<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
+				</rule>
+				<rule name="bycompany" lfield="company" rfield="company"
+					type="STR_JARO_WRINKLER">
+					<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
+				</rule>
+				<rule name="by_products" lfield="products" rfield="products"
+					type="STR_JARO_WRINKLER">
+					<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
+				</rule>
+			</rules>
+		</match>
+```
+
+To have a term of comparison, the manually curated matched and mismatches were deleted. The new run finds eight out of the total ten possible linkages:
+
+<figure>
+    <img src="{{'/static/img/recolink/jw_multi.png' | prepend: site.baseurl | prepend: site.url }}" alt='Record linkage report with Jaro-Winkler distance - multiple linkage rules' />
+    <figcaption>Record linkage report with Jaro-Winkler distance - multiple linkage rules</figcaption>
+</figure>
 
 <h2> Bibliography </h2>
 

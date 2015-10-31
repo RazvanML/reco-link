@@ -89,7 +89,8 @@ To address the second issue of the rule, the Jaro-Winkler metric can be used in 
 	rcard="ZEROONE">
 	<rules>
 		<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER">
-			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR" />
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" 
+			confidenceMode="LINEAR" />
 		</rule>
 	</rules>
 </match>
@@ -104,19 +105,23 @@ Also, running the combination of the two techniques demonstrated produces a 100 
 	rcard="ZEROONE">
 	<rules>
 		<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER">
-			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR" />
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" 
+			confidenceMode="LINEAR" />
 		</rule>
 		<rule name="byaddress" lfield="address" rfield="address"
 			type="STR_JARO_WRINKLER">
-			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR"/>
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" 
+			confidenceMode="LINEAR"/>
 		</rule>
 		<rule name="bycompany" lfield="company" rfield="company"
 			type="STR_JARO_WRINKLER">
-			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR"/>
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" 
+			confidenceMode="LINEAR"/>
 		</rule>
 		<rule name="by_products" lfield="products" rfield="products"
 			type="STR_JARO_WRINKLER">
-			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR" />
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" 
+			confidenceMode="LINEAR" />
 		</rule>
 	</rules>
 </match>

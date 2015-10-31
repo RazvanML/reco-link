@@ -12,14 +12,14 @@ only two of them enjoyed the perfect equality. It is obvious that measuring the 
 To use this metric instead of plain string comparison, the entity match rule has to be changed accordingly:
 
 ```xml
-		<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
-			rcard="ZEROONE" >
-			<rules>
-				<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER"  >
-					<score alpha="0.9" beta="0.9" threshold="0.85" />
-				</rule>
-			</rules>
-		</match>
+<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
+	rcard="ZEROONE" >
+	<rules>
+		<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER"  >
+			<score alpha="0.9" beta="0.9" threshold="0.85" />
+		</rule>
+	</rules>
+</match>
 ```
 The significant change is ```type="STR_JARO_WRINKLER"```. A scoring criterion has been added as well. The meaning of parameters is as following:
 * ```alpha``` is the probability of the test to return true, in case of a matching entity
@@ -52,34 +52,77 @@ For small amounts of data it is possible the complete data curation. Unfortunate
 To improve the accuracy, it is possible to use multiple linkage rules, below is the new configuration file:
 
 ```xml
-		<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
-			rcard="ZEROONE">
-			<rules>
-				<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER">
-					<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
-				</rule>
-				<rule name="byaddress" lfield="address" rfield="address"
-					type="STR_JARO_WRINKLER">
-					<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
-				</rule>
-				<rule name="bycompany" lfield="company" rfield="company"
-					type="STR_JARO_WRINKLER">
-					<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
-				</rule>
-				<rule name="by_products" lfield="products" rfield="products"
-					type="STR_JARO_WRINKLER">
-					<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
-				</rule>
-			</rules>
-		</match>
+<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
+	rcard="ZEROONE">
+	<rules>
+		<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER">
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
+		</rule>
+		<rule name="byaddress" lfield="address" rfield="address"
+			type="STR_JARO_WRINKLER">
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
+		</rule>
+		<rule name="bycompany" lfield="company" rfield="company"
+			type="STR_JARO_WRINKLER">
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
+		</rule>
+		<rule name="by_products" lfield="products" rfield="products"
+			type="STR_JARO_WRINKLER">
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" />
+		</rule>
+	</rules>
+</match>
 ```
 
-To have a term of comparison, the manually curated matched and mismatches were deleted. The new run finds eight out of the total ten possible linkages:
+To have a term of comparison, the manually curated matched and mismatches were deleted. The new run finds eight out of the total ten possible linkages; after marking the correct matches and the mismatches, the second run identifies properly all linkages.
 
 <figure>
     <img src="{{'/static/img/recolink/jw_multi.png' | prepend: site.baseurl | prepend: site.url }}" alt='Record linkage report with Jaro-Winkler distance - multiple linkage rules' />
     <figcaption>Record linkage report with Jaro-Winkler distance - multiple linkage rules</figcaption>
 </figure>
+
+
+To address the second issue of the rule, the Jaro-Winkler metric can be used in establishing of the verdict confidence of each matching rule. 
+
+```xml
+<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
+	rcard="ZEROONE">
+	<rules>
+		<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER">
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR" />
+		</rule>
+	</rules>
+</match>
+```
+
+Running this rule alone yields 100 percent correct linkages!
+
+Also, running the combination of the two techniques demonstrated produces a 100 percent correct linkage. The difference will be observed in a future post, when it will be discussed the confidence of each linkage.
+
+```xml
+<match name="matchperson" left="sales" right="support" lcard="ZEROONE"
+	rcard="ZEROONE">
+	<rules>
+		<rule name="byname" lfield="name" rfield="name" type="STR_JARO_WRINKLER">
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR" />
+		</rule>
+		<rule name="byaddress" lfield="address" rfield="address"
+			type="STR_JARO_WRINKLER">
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR"/>
+		</rule>
+		<rule name="bycompany" lfield="company" rfield="company"
+			type="STR_JARO_WRINKLER">
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR"/>
+		</rule>
+		<rule name="by_products" lfield="products" rfield="products"
+			type="STR_JARO_WRINKLER">
+			<score alpha="0.9" beta="0.9" thresholdtype="ONE" threshold="0.85" confidenceMode="LINEAR" />
+		</rule>
+	</rules>
+</match>
+```
+
+
 
 <h2> Bibliography </h2>
 

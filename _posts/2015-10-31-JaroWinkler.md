@@ -26,7 +26,7 @@ The significant change is ```type="STR_JARO_WRINKLER"```. A scoring criterion ha
 * ```beta``` is the probability of the test to return false, in case of a mismatching entity
 * ```threshold``` is a cutoff value used to provide the "match" and "no match" verdict.
 
-## Bibligraphy
+<h2> Bibliography </h2>
 
 <a name="b1">[1] Winkler, W. E. (1990). "String Comparator Metrics and Enhanced Decision Rules in the Fellegi-Sunter Model of Record Linkage". Proceedings of the Section on Survey Research Methods (American Statistical Association): 354–359.
 

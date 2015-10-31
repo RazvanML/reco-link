@@ -5,9 +5,9 @@ tags: record-linkage Jaro-Winkler multiple-criteria
 categories: Record Linkage
 ---
 
-The <a href="/reco-link/2015-10-28/Basic-Model/">previous post</a> relied exclusively on the exact match of name.  Out of the ten names, 
-only two of them enjoyed the perfect equality. Due to a coincidence, one of the two names was associated with a wrong record. It seems that perfect equality does not yield the necessary accuracy; on the other hand, measuring the "degree of similarity" between the names will yield some better results. One such measure is the 
-<a href="https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance">"Jaro-Winkler"</a> metric from <a href="#b1">[1]</a>. This measure returns a value between zero and one, with one for the equal strings and zero for the totally different strings. The measure factors in the composing letters of the string, their sequentiality as well as their position inside the string.
+The <a href="/reco-link/2015-10-28/Basic-Model/">previous post</a> has exclusively relied on the exact match of name.  Out of the ten names, 
+only two of them enjoyed the perfect equality. Due to a coincidence, one of the two names was associated with a wrong record. It seems that perfect equality does not yield the necessary accuracy; on the other hand, one can speculate that measuring the "degree of similarity" between the entries will yield some better results. One such measure is the 
+<a href="https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance">"Jaro-Winkler"</a> distance from <a href="#b1">[1]</a>. This measure returns a value between zero and one, with one for the equal strings and zero for the totally different strings. The measure factors in the similarity of the letters of a string, their sequentiality as well as the position of similar characters inside the string.
 
 To use this metric instead of plain string comparison, the entity match rule has to be changed accordingly:
 
@@ -26,7 +26,7 @@ The significant change is ```type="STR_JARO_WRINKLER"```. A scoring criterion ha
 * ```beta``` is the probability of the test to return false, in case of a mismatching entity
 * ```threshold``` is a cutoff value used to provide the "match" and "no match" verdict.
 
-The value choices for the three parameters will be the subject of a future post. Let's assume that the values are just right.
+The value choices for the three parameters will be the subject of a future post. Let's assume for the moment that the values are just right.
 
 With this change, the result is as following (mismatches were marked manually):
 
@@ -35,9 +35,9 @@ With this change, the result is as following (mismatches were marked manually):
     <figcaption>Record linkage report with Jaro-Winkler distance</figcaption>
 </figure>
 
-With this approach, the record linkage identified 10 linkages (this is the expected number), but out of them only five are correct. There are two causes contributing to this issue: first, the other data, like address, company and product are not used, and second, the quantitative part of the string similarity is discarded once passing the threshold.
+With the new approach, the record linkage identified 10 linkages (this is the expected number), but only four of them are correct. Two causes contribute to the poor performance: first, the other data, like address, company and product are not used, and second, the quantitative part of the string similarity is discarded once passing the threshold.
 
-By signaling the mismatches, the result turns in:
+By signaling the mismatches, the result improve with three more right linkages:
 
 <figure>
     <img src="{{'/static/img/recolink/jw3.png' | prepend: site.baseurl | prepend: site.url }}" alt='Record linkage report with Jaro-Winkler distance - second run' />
@@ -127,7 +127,7 @@ Also, running the combination of the two techniques demonstrated produces a 100 
 </match>
 ```
 
-In this post was introduced a new matching rule type, the Jaro-Winkler distance. Also, the employment of multiple criteria relies on an adapted Bayesian inference described by Fellegi and Sunter in <a href="#b2">[2]</a>. Confidence levels can be computed for each score and factored in the final probability of two record linkage.
+In this post was introduced a new matching rule type, the Jaro-Winkler distance. Also, the employment of multiple criteria relies on an adapted Bayesian algorithm inspired from Fellegi and Sunter in <a href="#b2">[2]</a>. Confidence levels can be computed for each score and factored in the final probability of two record linkage.
 
 While the perfect equality provides a natural way of identifiying candidate linkages, the Jaro-Winkler similarity does not provide such a vehicle. For this data set, all the possible candidates (```10 x 11 = 110```) were generated and computed. Larger data sets will require alternative methods of candidates generation, with the goal to avoid the quadratic complexity of the problem. 
 

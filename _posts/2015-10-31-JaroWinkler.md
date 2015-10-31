@@ -131,4 +131,4 @@ While the perfect equality provides a natural way of identifiying candidate link
 
 <a name="b1"></a>[1] Winkler, W. E. (1990). "String Comparator Metrics and Enhanced Decision Rules in the Fellegi-Sunter Model of Record Linkage". Proceedings of the Section on Survey Research Methods (American Statistical Association): 354-359.
 
-<a name="b1"></a> [2] Fellegi, Ivan; Sunter, Alan (December 1969). "A Theory for Record Linkage". Journal of the American Statistical Association 64 (328): pp. 1183–1210. doi:10.2307/2286061. JSTOR 2286061.
+<a name="b1"></a> [2] Fellegi, Ivan; Sunter, Alan (December 1969). "A Theory for Record Linkage". Journal of the American Statistical Association 64 (328): pp. 1183Ö±210. doi:10.2307/2286061. JSTOR 2286061.

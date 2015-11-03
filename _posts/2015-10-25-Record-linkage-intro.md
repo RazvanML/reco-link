@@ -2,7 +2,7 @@
 layout: post
 title: Introduction in Record Linkage
 tags: record-linkage introduction
-categories: Record Linkage
+categories: Record-Linkage
 ---
 
 Welcome to my record linkage blog!

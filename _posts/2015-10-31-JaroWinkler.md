@@ -2,7 +2,7 @@
 layout: post
 title: Using Jaro-Winkler to enhance record linkage
 tags: record-linkage Jaro-Winkler multiple-criteria
-categories: Record Linkage
+categories: Record-Linkage
 ---
 
 The <a href="/reco-link/2015-10-28/Basic-Model/">previous post</a> has exclusively relied on the exact match of name.  Out of the ten names, 

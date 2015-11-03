@@ -2,7 +2,7 @@
 layout: post
 title: A Basic Record Linkage Model
 tags: record-linkage introduction model
-categories: Record Linkage
+categories: Record-Linkage
 ---
 
 This post provides an introduction in the preparation of the record linkage model. Given the <a href="/reco-link/2015-10-25/Record-linkage-intro/">example of the previous post</a>, the easiest approach is to import data in a spreadsheet software (Microsoft Excel or Libre Office will do just fine) and to actually start record linkage.

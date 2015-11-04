@@ -45,4 +45,15 @@ The outcome of the comparison is a four list report:
 * Matches encountered in the second linkage only
 * Changed matches
 
+All but the first list take the pivot parameter into consideration. For example if the pivot is set to the left entity,
+then the second list is composed of the left entity records only matched in the first iteration.
 
+The previous post shown a 100% correct linkage by using two methods, first was using the name column only while the
+second employed all the available data. Although the two methods yielded the same result, the confidence levels were
+different:
+
+<figure>
+    <img src="{{'/static/img/recolink/compare2.png' | prepend: site.baseurl | prepend: site.url }}" 
+    alt='Comparison of name only and all-data linkages' />
+    <figcaption>Comparison of name only and all-data linkages</figcaption>
+</figure>

@@ -7,7 +7,7 @@ categories: Record-Linkage
 
 Before implementing more algorithms, I considered necessary to have an approximative mechanism to evaluate 
 the correctness of a linkage.
-The <a href="/reco-link/2015-10-31/JaroWinkler/">previous post</a> was introducing the Jaro-Wrinkler dissimilarity,
+The <a href="/reco-link/2015-10-31/JaroWinkler/">previous post</a> was introducing the Jaro-Winkler dissimilarity,
 together with a set of new parameters and options associated to the linkage test. Without a specialized interface, the
 choice of the parameters ```alpha```, ```beta``` and the decision between boolean and confidence based adjustment of 
 the test are tough calls.
@@ -48,7 +48,7 @@ The outcome of the comparison is a four list report:
 All but the first list take the pivot parameter into consideration. For example if the pivot is set to the left entity,
 then the second list is composed of the left entity records only matched in the first iteration.
 
-The previous post shown a 100% correct linkage by using two methods, first was using the name column only while the
+The previous post has shown a 100% correct linkage by using two methods, first was using the name column only while the
 second employed all the available data. Although the two methods yielded the same result, the confidence levels were
 different:
 
@@ -57,3 +57,23 @@ different:
     alt='Comparison of name only and all-data linkages' />
     <figcaption>Comparison of name only and all-data linkages</figcaption>
 </figure>
+
+
+A more meaningful report can be inspected on comparing the boolean, name-based Jaro-Winkler and the probability 
+affected by score method:
+
+<figure>
+    <img src="{{'/static/img/recolink/compare3.png' | prepend: site.baseurl | prepend: site.url }}" 
+    alt='Comparison of two linkage methods (part 1)' />
+    <figcaption>Comparison of two linkage methods (part 1)</figcaption>
+</figure>
+
+<figure>
+    <img src="{{'/static/img/recolink/compare4.png' | prepend: site.baseurl | prepend: site.url }}" 
+    alt='Comparison of two linkage methods (part 2)' />
+    <figcaption>Comparison of two linkage methods (part 2)</figcaption>
+</figure>
+
+
+In this post it was described a reporting method of record linkage result analysis. The reports help to decide if a change in the linkage model leads to better results or not.
+

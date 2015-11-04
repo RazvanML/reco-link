@@ -1,11 +1,12 @@
 ---
 layout: post
-title: Compare Two Linkages
+title: Evaluate record linkages
 tags: record-linkage compare GUI
 categories: Record-Linkage
 ---
 
-Before implementing more algorithms, I considered necessary to have an approximative mechanism to evaluate a linkage.
+Before implementing more algorithms, I considered necessary to have an approximative mechanism to evaluate 
+the correctness of a linkage.
 The <a href="/reco-link/2015-10-31/JaroWinkler/">previous post</a> was introducing the Jaro-Wrinkler dissimilarity,
 together with a set of new parameters and options associated to the linkage test. Without a specialized interface, the
 choice of the parameters ```alpha```, ```beta``` and the decision between boolean and confidence based adjustment of 
@@ -36,5 +37,12 @@ decide which of the compared sides is the pivot.
     alt='Record linkage comparison parameters' />
     <figcaption>Record linkage comparison parameters</figcaption>
 </figure>
+
+
+The outcome of the comparison is a four list report:
+* The unchanged entries, as of entities. Confidence level may have been changed.
+* Matches only belonging to the first linkage
+* Matches encountered in the second linkage only
+* Changed matches
 
 

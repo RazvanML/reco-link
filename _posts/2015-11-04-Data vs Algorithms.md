@@ -22,7 +22,7 @@ newly enhanced algorithm with fresh data, unknown until now to the system.
 Bringing in more data is not a free ride either. The new data has to "link" to the existing data. An independent data set
 is useless, as it cannot be "integrated" in the existing echosystem. If the new data also duplicates some of the 
 existing records, the de-duplication of the unified data set may eliminate valid records, while avoidance of the
-de-duplication will yield results statistically incorrect. Generally because of the reasons 
+de-duplication will yield statistically incorrect results. Generally because of the reasons 
 enumerated above,nowadays most of the people complain of having too much data, and not too less!
 
 For example, we can build today a neural network to identify welfare fraud based on a variety of factors and data points collected

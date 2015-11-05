@@ -6,7 +6,7 @@ categories: Record-Linkage
 ---
 
  <img src="{{'/static/img/recolink/logo.svg' | prepend: site.baseurl | prepend: site.url }}" 
-    alt='Record linkage logo' style="float:left;width:200px;padding:15px;margin:10px"   /> I'm writing this blog to launch a question. Given a fixed amount of resources, what will provide more impact:
+    alt='Record linkage logo' style="float:left;width:200px;padding:15px;margin:10px"   /> I'm writing this blog post to launch a question. Given a fixed amount of resources, what will provide more impact:
 improvements of the data mining algorithms, or acquisition of more data?
 My past experience tells that improvements in algorithms
  will yield a marginal (at most 5-10%) improvement of the accuracy or performance.
@@ -33,8 +33,8 @@ Record linkage is able to cover the issue of "too much data that cannot be used"
 linkage is a time consuming and error prone process. Starting from scratch, one will need about 2-6 months to understand
 the nature of data and have a "home-backed" record linkage system, which is far from being perfect. My attempt is to provide
 the backbone of a record linkage system, that will assist the users in data and rule exploration, will keep the 
-linkage logic in a very succinct, easy to maintain manner, will deliver a very good performance, and will allow incremental
-record linkage, eliminating the need to perform the linkage from scratch each time data changes.
+linkage logic in a very succinct, easy to maintain manner while delivering a very good performance. 
+Also it will allow incremental record linkage, eliminating the need to perform the linkage from scratch each time data changes.
 
 I think I have answered the question, considering additional data as more viable direction; I would like to hear other
 opinions, experiences or ideas.

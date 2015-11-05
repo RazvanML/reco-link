@@ -8,14 +8,15 @@ categories: Record-Linkage
  <img src="{{'/static/img/recolink/logo.svg' | prepend: site.baseurl | prepend: site.url }}" 
     alt='Record linkage logo' style="float:left;width:200px;padding:15px;margin:10px"   /> I'm writing this blog to launch a question. Given a fixed amount of resources, what will provide more impact:
 improvements of the data mining algorithms, or acquisition of more data?
-My past experience tells me that improvements in algorithms
+My past experience tells that improvements in algorithms
  will yield a marginal (at most 5-10%) improvement of the accuracy or performance.
  If we are not talking about large leverages or high costs of false positives/negatives, 
 these improvements are not impactful in their environment.
 
-Also, the "overengineering" of the artificial intelligence techniques will yield to overfitting, a phenomenon where an
+Also, the "overengineering" of the artificial intelligence methods will yield to overfitting, a phenomenon where an
 excellent accuracy is observed, but the system has a low capability of generalization, which will cause
-lower performance in the future, as the input data changes.
+lower performance in the future, as the input data changes. This situation can be easily spotted, by testing the 
+newly enhanced algorithm with fresh data, unknown until now to the system.
 
 Bringing in more data is not a free ride either. The new data has to "link" to the existing data. An independent data set
 is useless, as it cannot be "integrated" in the existing echosystem. If the new data also duplicates some of the 

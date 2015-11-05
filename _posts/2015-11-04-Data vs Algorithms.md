@@ -6,7 +6,8 @@ categories: Record-Linkage
 ---
 
  <img src="{{'/static/img/recolink/logo.svg' | prepend: site.baseurl | prepend: site.url }}" 
-    alt='Record linkage logo' style="float:left;width:200px;padding:15px;margin:10px"   /> I'm writing this blog post to launch a question. Given a fixed amount of resources, what will provide more impact:
+    alt='Record linkage logo' style="float:left;width:200px;padding:15px;margin:10px"   /> 
+I'm writing this blog post  to launch a question. Given a fixed amount of resources, what will provide more impact:
 improvements of the data mining algorithms, or acquisition of more data?
 My past experience tells that improvements in algorithms
  will yield a marginal (at most 5-10%) improvement of the accuracy or performance.

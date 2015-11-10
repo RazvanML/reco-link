@@ -71,4 +71,3 @@ or without confidence adjustment based on the observed dissimilarity score:
 
 A basic reporting method of record linkage result analysis was described in this post.
 The reports help to decide if a change in the linkage model leads to better results or not.
-

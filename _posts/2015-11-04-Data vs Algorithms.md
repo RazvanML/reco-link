@@ -25,7 +25,7 @@ existing records, the de-duplication of the unified data set may eliminate valid
 de-duplication will yield statistically incorrect results. Generally because of the reasons 
 enumerated above,nowadays most of the people complain of having too much data, and not too less!
 
-For example, we can build today a neural network to identify welfare fraud based on a variety of factors and data points collected
+For example, we can build today a machine learning system to identify welfare fraud based on a variety of factors and data points collected
 by the welfare office. However, by linking with databases like "car registrations" or "traffic offenses" the welfare
 office may build a clearer picture on possible fraudsters and their whereabouts. The new data can be fed into existing
 algorithms, which can produce significantly better results with no or less changes.

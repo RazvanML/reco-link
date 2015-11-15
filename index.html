@@ -16,7 +16,7 @@ styles: [article-list.css]
                   <a class="title" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
                       {{ post.title }}
                   </a>
-                  <p>{{ post.content  | strip_newlines | truncate: 260 }}</p>
+                  <p>{{ post.content  | strip_newlines | truncate: 550 }}</p>
                   <a class="readmore" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">Read More</a>
                   <footer>
                       {% for tag in post.tags %}

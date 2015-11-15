@@ -9,7 +9,8 @@ Welcome to my record linkage blog!
 
 Record Linkage is a sum of techniques to associate records of two or multiple databases without sharing common keys.
 
-ACME Corporation stores customer data provided by the sales and support departments. Since there is/was no global concept of "Customer ID", both departments use their own internal IDs, while collecting data like Customer Name, Customer Address, Customer Company and the list of registered products. Since the data of sales is disconnected of support data, the decision support system cannot identify the classes of customers that require the less support, even if these costumers are preferred to high maintenance customers.   <!--more-->
+ACME Corporation stores customer data provided by the sales and support departments. Since there is/was no global concept of "Customer ID", both departments use their own internal IDs, while collecting data like Customer Name, Customer Address, Customer Company and the list of registered products. Since the data of sales is disconnected of support data, the decision support system cannot identify the classes of customers that require the less support, even if these costumers are preferred to high maintenance customers.   
+<!--more-->
 
 During the following posts I will present a few basic techniques of record linkage, as well as the features of a software I develop.
 

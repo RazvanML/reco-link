@@ -3,7 +3,7 @@ permalink: /:year-:month-:day/:title/
 highlighter: pygments
 markdown: redcarpet
 redcarpet:
-  extensions: [
+  `tensions: [
    "no_intra_emphasis"
    ,"fenced_code_blocks"
    ,"autolink"
@@ -25,6 +25,8 @@ redcarpet:
 paginate: 10
 paginate_path: ":num"
 baseurl: ""
+
+excerpt_separator: <!--more-->
 
 
 

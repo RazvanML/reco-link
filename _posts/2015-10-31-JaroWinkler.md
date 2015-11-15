@@ -7,7 +7,7 @@ categories: Record-Linkage
 
 The <a href="/reco-link/2015-10-28/Basic-Model/">previous post</a> has exclusively relied on the exact match of name.  Out of the ten names, 
 only two of them enjoyed the perfect equality. Due to a coincidence, one of the two names was associated with a wrong record. It seems that perfect equality does not yield the necessary accuracy; on the other hand, one can speculate that measuring the "degree of similarity" between the entries will yield some better results. One such measure is the 
-<a href="https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance">"Jaro-Winkler"</a> distance from <a href="#b1">[1]</a>. This measure returns a value between zero and one, with one for the equal strings and zero for the totally different strings. The measure factors in the similarity of the letters of a string, their sequentiality as well as the position of similar characters inside the string.
+<a href="https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance">"Jaro-Winkler"</a> distance from <a href="#b1">[1]</a>. This measure returns a value between zero and one, with one for the equal strings and zero for the totally different strings. The measure factors in the similarity of the letters of a string, their sequentiality as well as the position of similar characters inside the string.  <!--more-->
 
 To use this metric instead of plain string comparison, the entity match rule has to be changed accordingly:
 

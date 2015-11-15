@@ -6,8 +6,8 @@ categories: Record-Linkage
 ---
 
 Today's topic is how to evaluate the correctness of a linkage. Even with the few options described in the previous posts (such as field equality and Jaro-Winkler dissimilarity), a number of models were created, each with its own specific accuracy. Without a specialized interface, the
-choice of the parameters ```alpha```, ```beta```, the true/false threshold and the decision between boolean and confidence based adjustment of the test are tough calls. <!--more-->
-
+choice of the parameters ```alpha```, ```beta```, the true/false threshold and the decision between boolean and confidence based adjustment of the test are tough calls. 
+<!--more-->
 Record linkage rarely operates with a golden standard, meaning that the "true" linkage it is not available, therefore
 a linkage cannot be scored against a predetermined known solution.
 

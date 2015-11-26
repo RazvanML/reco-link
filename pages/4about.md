@@ -34,4 +34,6 @@ Theme:  <a href="http://blog.rainyalley.com/"><span class="word-keep">&copy; Rai
 
 Favicon under Creative Common Attribution 2.5 License &copy; <A href="http://www.famfamfam.com">famfamfam</a>
 
+Tennis racket image under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons license </a> 
+ by <a href="https://en.wikipedia.org/wiki/User:Vladsinger">vlad§inger</a>
 

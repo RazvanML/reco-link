@@ -14,7 +14,8 @@ for a server enviroment. MAAS 2 is not much different of the former; the only no
 In the previous version it was part of "Settings", now goes under "Fabric".
 
 Still missing is the WOL (Wake on Lan) Power Type. My understanding here is that MAAS has an issue with the ablility to shut-down nodes 
-(since no permanent agent is deployed on the nodes) rather than starting the nodes with the rack manager.
+(since no permanent agent is deployed on the nodes) rather than starting the nodes with the rack manager. It seems that the feature was 
+<a href="https://bugs.launchpad.net/maas/+bug/1246626">dropped</a> as a result of a bug.
 
 I'm still working on Juju 2 (another default of "Xenial Xerus"). Again, this is a beta, but here most of the concepts have been re-fatored. The poor choice of
 configuration files in YAML denies the user the understanding of configuration requirements. Practically, the user is constrained to "copy,paste and adapt" configurations from
@@ -29,3 +30,4 @@ ERROR loading credentials: credentials.maas.rosaura.maas-oauth: expected string,
 Who is  ```rosaura```? Where is this name coming from?
 
 
+Also, no autopilot is available, according to <a href="http://askubuntu.com/questions/764507/is-autopilot-openstack-16-04-available">askubuntu</a>.

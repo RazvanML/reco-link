@@ -3,8 +3,7 @@ layout: page
 title: Links
 permalink: /link/
 icon: octicon-link-external
-isNavItem: false
-published: false
+isNavItem: true
 ---
 
 ###[Miravtech Corporation](http://www.miravtech.com)

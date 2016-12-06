@@ -41,19 +41,17 @@ public class MyUI extends UI {
 ```
 
 The ``ObjectProperty`` instance keeps the Kelvin temperature, while the raw field edits the value without performing any conversions.
-Further, all Java statements will go inside the init method, except of the standalone class declarations.
+Further, all Java statements will go inside the ```init``` method, except of the standalone class declarations.
 
 Let's add a blank Kelvin converter and a Kelvin field. The only improvement compared to the raw control is the two decimal enforcement.
 
 ```java
 @SuppressWarnings("serial")
 abstract class StringDoubleAbstract implements Converter<String, Double> {
-
 	@Override
 	public Class<Double> getModelType() {
 		return Double.class;
 	}
-
 	@Override
 	public Class<String> getPresentationType() {
 		return String.class;
@@ -65,7 +63,6 @@ class KelvinConverter extends StringDoubleAbstract {
 	public Double convertToModel(String value, Class<? extends Double> targetType, Locale locale) {
 		return Double.parseDouble(value);
 	}
-
 	@Override
 	public String convertToPresentation(Double value, Class<? extends String> targetType, Locale locale) {
 		return String.format("%.2f", value);
@@ -75,9 +72,9 @@ class KelvinConverter extends StringDoubleAbstract {
 The generic ```StringDoubleAbstract``` describes the ```Converter``` nature: it will take a ```Double``` as model and expose a ```String``` to the UI control.
 
 ```java
-		final TextField kelvin = new TextField(temp);
-		kelvin.setConverter(new KelvinConverter());
-		kelvin.setCaption("Kelvin");
+final TextField kelvin = new TextField(temp);
+kelvin.setConverter(new KelvinConverter());
+kelvin.setCaption("Kelvin");
 ```
 
 Further converters can be developed on this pattern. Please note that the converter computes the Kelvin temperature when communicating from control to model and the specific scale when processing the model to control.
@@ -134,21 +131,21 @@ Although laborious, this technique allows to develop as many scales as required,
 And in the ```init``` method:
 
 ```java
-		final TextField celsius = new TextField(temp);
-		celsius.setConverter(new CelsiusConverter());
-		celsius.setCaption("Celsius");
+final TextField celsius = new TextField(temp);
+celsius.setConverter(new CelsiusConverter());
+celsius.setCaption("Celsius");
 
-		final TextField fahrenh = new TextField(temp);
-		fahrenh.setConverter(new FahrenheitConverter());
-		fahrenh.setCaption("Fahrenheit");
+final TextField fahrenh = new TextField(temp);
+fahrenh.setConverter(new FahrenheitConverter());
+fahrenh.setCaption("Fahrenheit");
 
-		final TextField reaumur = new TextField(temp);
-		reaumur.setConverter(new ReaumurConverter());
-		reaumur.setCaption("Réaumur");
+final TextField reaumur = new TextField(temp);
+reaumur.setConverter(new ReaumurConverter());
+reaumur.setCaption("Réaumur");
 
-		final TextField rankine = new TextField(temp);
-		rankine.setConverter(new RankineConverter());
-		rankine.setCaption("Rankine");
+final TextField rankine = new TextField(temp);
+rankine.setConverter(new RankineConverter());
+rankine.setCaption("Rankine");
 ```
 
 Next step is to have the controls added to the form layout. Addtional properies, such as ```immediate```, can be set as part of the interface build loop.
@@ -184,16 +181,16 @@ In this moment, introducing in any of the controls a temperature which will yiel
 It would be useful to have the error cleared if a valid temperature is being introduce in another field. To implement this, a listener on the bean property is required, so that writing a valid value here will clear up the invalid values:
 
 ```java
-		temp.addValueChangeListener(e->{
-			if (fields != null)
-				for (TextField tf : fields) {
-					try {
-						tf.validate();
-					} catch(RuntimeException ex) {
-						tf.discard();						
-					}
-				}			
-		});
+temp.addValueChangeListener(e->{
+	if (fields != null)
+		for (TextField tf : fields) {
+			try {
+				tf.validate();
+			} catch(RuntimeException ex) {
+				tf.discard();						
+			}
+		}			
+});
 ```
 
 Note the ```validate``` call. This is necessary because as of Vaadin 7.7.5, the method ```getComponentError()``` returns null even for invalidated controls.

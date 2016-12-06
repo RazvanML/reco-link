@@ -15,14 +15,18 @@ For contact, please drop me an email at: <div id="mail" style="font-weight:bold;
 <script>document.getElementById("mail").innerHTML = "razvnpp"+String.fromCharCode(64)+"gmai"+"l.com";</script>
 
 My areas of expertise are:
-* data mining
-* distributed computation
-* database systems
-* reporting and decision support systems
-* algorithm design
-* performance tuning of software
-* software architecture
-* Software development in Java,C, C++, Python and many more
+<ul>
+<li>data mining </li>
+<li>recommendation systems</li>
+<li>record linkage</li>
+<li>distributed computation </li>
+<li>database systems </li>
+<li>reporting and decision support systems</li>
+<li>algorithm design</li>
+<li>performance tuning of software</li>
+<li>software architecture</li>
+<li>Software development in Java,C, C++, Python and many more</li>
+</ul>
 
 
 <h2>Colophon</h2>

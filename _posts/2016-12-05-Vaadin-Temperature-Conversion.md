@@ -5,7 +5,7 @@ tags: Vaadin UI Ajax MVC GUI
 categories: UI
 ---
 
-This is one of my first MVC applications in Vaadin. It demonstrate a simple form and interaction with ```ObjectProperty```.
+This is one of my first MVC applications in <a href="https://vaadin.com/home">Vaadin</a>. It demonstrate a simple form and interaction with ```ObjectProperty```.
 
 <!--more-->
 

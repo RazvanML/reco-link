@@ -7,7 +7,7 @@ published: true
 isNavItem: true
 ---
 
-<img src="{{'/static/img/razvan.jpg' | prepend: site.baseurl | prepend: site.url }}" style="float:right">
+<img src="{{'/static/img/razvan.jpg' | prepend: site.baseurl  }}" style="float:right">
 My name is Razvan Popovici, I am a software engineer and a researcher of data mining, big data and machine learning. 
 I hold a PhD degree in Computer and Information Technology.
 

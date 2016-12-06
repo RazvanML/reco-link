@@ -14,7 +14,7 @@ The application performs temperature conversion between multiple scales. A list 
 The architecture of the application consists of a temperature bean, which is written by multiple fields. The fields write to the bean through the converter. The bean retains the Kelvin version, while the control show their specific scales.
 
 <figure>
-    <img src="{{'/static/vaadin/screenshot.png' | prepend: site.baseurl | prepend: site.url }}" 
+    <img src="{{'/static/vaadin/screenshot.png' | prepend: site.baseurl }}" 
     alt='Temperature conversion application' />
     <figcaption>Temperature conversion application</figcaption>
 </figure>

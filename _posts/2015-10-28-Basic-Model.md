@@ -152,7 +152,7 @@ Each match will have one or more ```<rule>``` elements. They define the criteria
 Let's run the record linkage. Since we only have 10 records, the execution time shall be under 2-3 seconds. The output can be either inspected visually, or it is provided as a linkage table below:
 
 <figure>
-    <img src="{{'/static/img/recolink/match1.png' | prepend: site.baseurl | prepend: site.url }}" alt='missing' />
+    <img src="{{'/static/img/recolink/match1.png' | prepend: site.baseurl  }}" alt='missing' />
     <figcaption>Record linkage report after the first run</figcaption>
 </figure>
 
@@ -208,7 +208,7 @@ The htmlfy function has to be defined as a stored procedure on the database leve
 Running the linkage again, the following linkage report can be inspected:
 
 <figure>
-    <img src="{{'/static/img/recolink/match2.png' | prepend: site.baseurl | prepend: site.url }}" alt='missing' />
+    <img src="{{'/static/img/recolink/match2.png' | prepend: site.baseurl  }}" alt='missing' />
     <figcaption>Record linkage report after the enhancing entities names - differences are highlighted</figcaption>
 </figure>
 
@@ -224,7 +224,7 @@ It may be possible that multiple names from the left will match multiple names f
 
 
 <figure>
-    <img src="{{'/static/img/recolink/match3.png' | prepend: site.baseurl | prepend: site.url }}" alt='missing' />
+    <img src="{{'/static/img/recolink/match3.png' | prepend: site.baseurl  }}" alt='missing' />
     <figcaption>Record linkage after enabling multiple links for a record</figcaption>
 </figure>
 
@@ -232,7 +232,7 @@ It may be possible that multiple names from the left will match multiple names f
 Once this report has been displayed, it turns clear that we have the same person stored twice in the database, once for the home address and company, and second for the employer. In this point, we can either mismatch the first link, validate the second link or both.
 
 <figure>
-    <img src="{{'/static/img/recolink/match4.png' | prepend: site.baseurl | prepend: site.url }}" alt='missing' />
+    <img src="{{'/static/img/recolink/match4.png' | prepend: site.baseurl  }}" alt='missing' />
     <figcaption>Manual match and mismatch the record linkages</figcaption>
 </figure>
 

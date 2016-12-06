@@ -14,7 +14,7 @@ a linkage cannot be scored against a predetermined known solution.
 The first step is to inspect the confidence level yielded by the battery of matching rules. This number is a normalization of the probability that the two records match.
 
 <figure>
-    <img src="{{'/static/img/recolink/confidence1.png' | prepend: site.baseurl | prepend: site.url }}" 
+    <img src="{{'/static/img/recolink/confidence1.png' | prepend: site.baseurl }}" 
     alt='Record linkage report with confidence level' />
     <figcaption>Record linkage report with confidence level</figcaption>
 </figure>
@@ -29,7 +29,7 @@ To compare two linkages, the user must point to the entity to compare, choose tw
 decide which of the left and right entities to be matched is the reference. In the example below are saved the linkages described in the previous post, as well as the <a href="/reco-link/2015-10-28/Basic-Model/">field equality</a> example.
 
 <figure>
-    <img src="{{'/static/img/recolink/compare1.png' | prepend: site.baseurl | prepend: site.url }}" 
+    <img src="{{'/static/img/recolink/compare1.png' | prepend: site.baseurl  }}" 
     alt='Record linkage comparison parameters' />
     <figcaption>Record linkage comparison parameters</figcaption>
 </figure>
@@ -48,7 +48,7 @@ second employed all the available data. Although the two methods yielded the sam
 different:
 
 <figure>
-    <img src="{{'/static/img/recolink/compare2.png' | prepend: site.baseurl | prepend: site.url }}" 
+    <img src="{{'/static/img/recolink/compare2.png' | prepend: site.baseurl  }}" 
     alt='Comparison of name only and all-data linkages' />
     <figcaption>Comparison of name only and all-data linkages</figcaption>
 </figure>
@@ -58,13 +58,13 @@ A more meaningful report can be inspected on comparing the two applications of J
 or without confidence adjustment based on the observed dissimilarity score:
 
 <figure>
-    <img src="{{'/static/img/recolink/compare3.png' | prepend: site.baseurl | prepend: site.url }}" 
+    <img src="{{'/static/img/recolink/compare3.png' | prepend: site.baseurl  }}" 
     alt='Comparison of two linkage methods (part 1)' />
     <figcaption>Comparison of two linkage methods (part 1)</figcaption>
 </figure>
 
 <figure>
-    <img src="{{'/static/img/recolink/compare4.png' | prepend: site.baseurl | prepend: site.url }}" 
+    <img src="{{'/static/img/recolink/compare4.png' | prepend: site.baseurl  }}" 
     alt='Comparison of two linkage methods (part 2)' />
     <figcaption>Comparison of two linkage methods (part 2)</figcaption>
 </figure>

@@ -5,7 +5,7 @@ tags: record-linkage data-mining business-intelligence
 categories: Record-Linkage
 ---
 
- <img src="{{'/static/img/recolink/logo.svg' | prepend: site.baseurl | prepend: site.url }}" 
+ <img src="{{'/static/img/recolink/logo.svg' | prepend: site.baseurl  }}" 
     alt='Record linkage logo' style="float:left;width:200px;padding:15px;margin:10px"   /> 
 I'm writing this blog post  to launch a question. Given a fixed amount of resources, what will provide more impact:
 improvements of the data mining algorithms or acquisition of more data? 

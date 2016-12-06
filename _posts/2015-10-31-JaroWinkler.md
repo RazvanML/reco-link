@@ -32,7 +32,7 @@ The value choices for the three parameters will be the subject of a future post.
 With this change, the result is as following (mismatches were marked manually):
 
 <figure>
-    <img src="{{'/static/img/recolink/jw2.png' | prepend: site.baseurl | prepend: site.url }}" alt='Record linkage report with Jaro-Winkler distance' />
+    <img src="{{'/static/img/recolink/jw2.png' | prepend: site.baseurl  }}" alt='Record linkage report with Jaro-Winkler distance' />
     <figcaption>Record linkage report with Jaro-Winkler distance</figcaption>
 </figure>
 
@@ -41,7 +41,7 @@ With the new approach, the record linkage identified 10 linkages (this is the ex
 By signaling the mismatches, the result improve with three more right linkages:
 
 <figure>
-    <img src="{{'/static/img/recolink/jw3.png' | prepend: site.baseurl | prepend: site.url }}" alt='Record linkage report with Jaro-Winkler distance - second run' />
+    <img src="{{'/static/img/recolink/jw3.png' | prepend: site.baseurl  }}" alt='Record linkage report with Jaro-Winkler distance - second run' />
     <figcaption>Record linkage report with Jaro-Winkler distance - second run</figcaption>
 </figure>
 
@@ -78,7 +78,7 @@ To improve the accuracy, it is possible to use multiple linkage rules, below is 
 To have a term of comparison, the manually curated matched and mismatches were deleted. The new run finds eight out of the total ten possible linkages; after marking the correct matches and the mismatches, the second run identifies properly all linkages.
 
 <figure>
-    <img src="{{'/static/img/recolink/jw_multi.png' | prepend: site.baseurl | prepend: site.url }}" alt='Record linkage report with Jaro-Winkler distance - multiple linkage rules' />
+    <img src="{{'/static/img/recolink/jw_multi.png' | prepend: site.baseurl  }}" alt='Record linkage report with Jaro-Winkler distance - multiple linkage rules' />
     <figcaption>Record linkage report with Jaro-Winkler distance - multiple linkage rules</figcaption>
 </figure>
 

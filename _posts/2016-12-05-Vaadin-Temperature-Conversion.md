@@ -187,7 +187,7 @@ temp.addValueChangeListener(e->{
 			try {
 				tf.validate();
 			} catch(RuntimeException ex) {
-				tf.discard();						
+				tf.discard();
 			}
 		}			
 });

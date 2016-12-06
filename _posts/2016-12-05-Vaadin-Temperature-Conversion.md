@@ -11,7 +11,7 @@ This is one of my first MVC applications in Vaadin. It demonstrate a simple form
 
 The application performs temperature conversion between multiple scales. A list of formulas as well as a converter can be found <a href="http://www.csgnetwork.com/temp2conv.html">here</a>.
 
-The architecture of the application consists of a temperature bean, which is written by multiple fields. The fields write to the bean through the converter. The bean retains the Kelvin version, while the control show their specific scales.
+The architecture of the application consists of a temperature bean, which is written by multiple fields. The fields write to the bean through the converter. The bean retains the Kelvin version, while the controls show their specific scales.
 
 <figure>
     <img src="{{'/static/vaadin/screenshot.png' | prepend: site.baseurl }}" 
@@ -43,7 +43,7 @@ public class MyUI extends UI {
 The ``ObjectProperty`` instance keeps the Kelvin temperature, while the raw field edits the value without performing any conversions.
 Further, all Java statements will go inside the init method, except of the standalone class declarations.
 
-Let's add a blank Kelvin converter and a Kelvin field. The only difference is the two decimal enforcement.
+Let's add a blank Kelvin converter and a Kelvin field. The only improvement compared to the raw control is the two decimal enforcement.
 
 ```java
 @SuppressWarnings("serial")
@@ -80,19 +80,15 @@ The generic ```StringDoubleAbstract``` describes the ```Converter``` nature: it 
 		kelvin.setCaption("Kelvin");
 ```
 
-On this model we are going to describe further converters as well as input fields:
+Further converters can be developed on this pattern. Please note that the converter computes the Kelvin temperature when communicating from control to model and the specific scale when processing the model to control.
 
 
 ```java
 class CelsiusConverter extends StringDoubleAbstract {
-
-	private static final long serialVersionUID = -1524591030869715534L;
-
 	@Override
 	public Double convertToModel(String value, Class<? extends Double> targetType, Locale locale) {
 		return Double.parseDouble(value) + 273.15;
 	}
-
 	@Override
 	public String convertToPresentation(Double value, Class<? extends String> targetType, Locale locale) {
 		return String.format("%.2f", value - 273.15);
@@ -100,14 +96,10 @@ class CelsiusConverter extends StringDoubleAbstract {
 }
 
 class FahrenheitConverter extends StringDoubleAbstract {
-
-	private static final long serialVersionUID = -5183124170264846969L;
-
 	@Override
 	public Double convertToModel(String value, Class<? extends Double> targetType, Locale locale) {
 		return 5d / 9d * (Double.parseDouble(value) - 32) + 273.15;
 	}
-
 	@Override
 	public String convertToPresentation(Double value, Class<? extends String> targetType, Locale locale) {
 		return String.format("%.2f", 9d / 5d * (value - 273.15) + 32);
@@ -115,14 +107,10 @@ class FahrenheitConverter extends StringDoubleAbstract {
 }
 
 class ReaumurConverter extends StringDoubleAbstract {
-
-	private static final long serialVersionUID = 6532528732688067418L;
-
 	@Override
 	public Double convertToModel(String value, Class<? extends Double> targetType, Locale locale) {
 		return Double.parseDouble(value) * 1.25 + 273.15;
 	}
-
 	@Override
 	public String convertToPresentation(Double value, Class<? extends String> targetType, Locale locale) {
 		return String.format("%.2f", (value - 273.15) * 0.8);
@@ -130,20 +118,18 @@ class ReaumurConverter extends StringDoubleAbstract {
 }
 
 class RankineConverter extends StringDoubleAbstract {
-
-	private static final long serialVersionUID = 1064145329443226638L;
-
 	@Override
 	public Double convertToModel(String value, Class<? extends Double> targetType, Locale locale) {
 		return Double.parseDouble(value) / 1.8;
 	}
-
 	@Override
 	public String convertToPresentation(Double value, Class<? extends String> targetType, Locale locale) {
 		return String.format("%.2f", value * 1.8);
 	}
 }
 ```
+
+Although laborious, this technique allows to develop as many scales as required, with only two formulas per scale.
 
 And in the ```init``` method:
 

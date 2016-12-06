@@ -154,14 +154,14 @@ And in the ```init``` method:
 Next step is to have the controls added to the form layout. Addtional properies, such as ```immediate```, can be set as part of the interface build loop.
 
 ```java
-		fields = new TextField[] {raw, kelvin, celsius, fahrenh, reaumur, rankine };
-		for (TextField tf : fields) {
-			tf.setImmediate(true);
-			layout.addComponent(tf);
-		}
-		layout.setMargin(true);
-		layout.setSpacing(true);
-		setContent(layout);
+fields = new TextField[] {raw, kelvin, celsius, fahrenh, reaumur, rankine };
+for (TextField tf : fields) {
+	tf.setImmediate(true);
+	layout.addComponent(tf);
+}
+layout.setMargin(true);
+layout.setSpacing(true);
+setContent(layout);
 ```
 
 In this point, a fully functional temperature converter has been developed. Let's add some "whistles and bells". Physically, a temperature equal or under zero is impossible. Such a value, introduced in a application, will probably force the application to crash or return invalid numeric results. We need to introduce a validator, so that no temperature equal or under zero is to be written to the bean.
@@ -169,7 +169,7 @@ In this point, a fully functional temperature converter has been developed. Let'
 ```java
 class TemperatureyValidator implements Validator {
 	@Override
-	public void validate(Object value) throws InvalidValueException {
+	public void va	lidate(Object value) throws InvalidValueException {
 		if ((Double) value <= 0)
 			throw new InvalidValueException("Physically impossible temperature");
 	}
@@ -198,7 +198,9 @@ It would be useful to have the error cleared if a valid temperature is being int
 
 Note the ```validate``` call. This is necessary because as of Vaadin 7.7.5, the method ```getComponentError()``` returns null even for invalidated controls.
 
-The whole Java file is available  <a href="{{'/static/vaadin/MyUI.java' | prepend: site.baseurl }}">here</a>.
+This application is no different to a "canonical" form, except each of the fields points to the same data model.
+
+The whole Java file is available  <a href="{{'/static/vaadin/MyUI.java' | prepend: site.baseurl }}">here</a>, under a "free as in free beer" license.
 
 
 

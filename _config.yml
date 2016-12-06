@@ -2,7 +2,8 @@ permalink: /:year-:month-:day/:title/
 
 highlighter: pygments
 markdown: kramdown
-redcarpet:
+
+kramdown:
   extensions: [
    "no_intra_emphasis"
    ,"fenced_code_blocks"
@@ -37,9 +38,6 @@ swiftype_searchId: "ag_A4wWrt7vArxErszmh"
 disqus_shortname: "razvanpopovici"
 
 
-
-#url: "http://blog.rainyalley.com"
-#imgrepo: "http://blog.rainyalley.com/static/img"
 url: "http://razvanml.github.io/reco-link"
 imgrepo: "http://razvanml.github.io/reco-link/static/img"
 

@@ -120,7 +120,6 @@ class TemperatureyValidator implements Validator {
 
 @Theme("mytheme")
 public class MyUI extends UI {
-;
 
 	/**
 	 * 

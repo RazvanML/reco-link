@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Vaadin Temperature Conversion 
-tags: Vaadin UI Ajax MVC
+tags: Vaadin UI Ajax MVC GUI
 categories: UI
 ---
 
-This is one of my first MVC applications in Vaadin. It demonstrate a simple form and interaction with Object Properties.
+This is one of my first MVC applications in Vaadin. It demonstrate a simple form and interaction with ObjectProperty.
 
 <!--more-->
 
@@ -18,3 +18,18 @@ The architecture of the application consists of a temperature bean, which is wri
     alt='Temperature conversion application' />
     <figcaption>Temperature conversion application</figcaption>
 </figure>
+
+Let's start by creating the data model.
+
+```java
+@Theme("mytheme")
+public class MyUI extends UI {
+
+	ObjectProperty<Double> temp = new ObjectProperty<Double>(100.0);
+}
+```
+
+The whole Java file is available  <a href="{{'/static/vaadin/MyUI.java' | prepend: site.baseurl }}">here</a>.
+
+
+

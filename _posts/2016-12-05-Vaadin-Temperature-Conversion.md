@@ -197,7 +197,7 @@ Note the ```validate``` call. This is necessary because as of Vaadin 7.7.5, the 
 
 This application is no different to a "canonical" form, except each of the fields points to the same data model.
 
-The whole Java file is available  <a href="{{'/static/vaadin/MyUI.java' | prepend: site.baseurl }}">here</a>, under a "free as in free beer" license.
+The whole Java file is available  <a href="{{'/static/vaadin/MyUI.java' | prepend: site.baseurl }}">here</a>, under a "free as in free beer" license. The surounding project can be build with the Eclipse Vaadin Project Wizard.
 
 
 

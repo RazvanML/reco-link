@@ -120,6 +120,7 @@ class TemperatureyValidator implements Validator {
 
 @Theme("mytheme")
 public class MyUI extends UI {
+;
 
 	/**
 	 * 
@@ -157,25 +158,21 @@ public class MyUI extends UI {
 		rankine.setConverter(new RankineConverter());
 		rankine.setCaption("Rankine");
 
-		temp.addValueChangeListener(e->{
-			if (fields != null)
-				for (TextField tf : fields) {
-					try {
-						tf.validate();
-					} catch(RuntimeException ex) {
-						System.out.println(tf.getComponentError().getFormattedHtmlMessage());
-						tf.discard();						
-					}
-				}			
-		});
 		
 		fields = new TextField[] {raw, kelvin, celsius, fahrenh, reaumur, rankine };
+
 		for (TextField tf : fields) {
 			tf.setImmediate(true);
 			tf.addValidator(new TemperatureyValidator());
 			layout.addComponent(tf);
 
 		}
+		temp.addValueChangeListener(e->{
+			if (fields != null)
+				for (TextField tf : fields)
+					if (!tf.isValid())
+						tf.discard();						
+		});
 
 		layout.setMargin(true);
 		layout.setSpacing(true);
@@ -183,7 +180,7 @@ public class MyUI extends UI {
 		setContent(layout);
 	}
 
-	@WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
+	@WebServlet(urlPatterns = {"/temp/*","/VAADIN/*"}, name = "MyUIServlet", asyncSupported = true)
 	@VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
 	public static class MyUIServlet extends VaadinServlet {
 

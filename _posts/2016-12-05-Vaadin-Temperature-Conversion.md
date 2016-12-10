@@ -178,26 +178,20 @@ This validator is being set to each control. Note that the validator operates wi
 tf.addValidator(new TemperatureyValidator());
 ```
 In this moment, introducing in any of the controls a temperature which will yield to a zero or sub-zero Kelvin, the control will display an error.
-It would be useful to have the error cleared if a valid temperature is being introduce in another field. To implement this, a listener on the bean property is required, so that writing a valid value here will clear up the invalid values:
+It would be useful to have the error cleared if a valid temperature is being introduce in another field. To implement this, a listener on the bean property is required, so that writing a valid value here will clear up the invalid values. The call ```if (!tf.isValid())``` is optional. It actually calls internally the validators and establishes if the field is valid. Without it, all the fields will be refreshed from the underlying bean. It seems there is no way to query the valid/invalid state of a TextField without actually calling the validator.
 
 ```java
-temp.addValueChangeListener(e->{
-	if (fields != null)
-		for (TextField tf : fields) {
-			try {
-				tf.validate();
-			} catch(RuntimeException ex) {
-				tf.discard();
-			}
-		}			
-});
+		temp.addValueChangeListener(e->{
+			if (fields != null)
+				for (TextField tf : fields)
+					if (!tf.isValid())
+						tf.discard();						
+		});
 ```
-
-Note the ```validate``` call. This is necessary because as of Vaadin 7.7.5, the method ```getComponentError()``` returns null even for invalidated controls.
 
 This application is no different to a "canonical" form, except each of the fields points to the same data model.
 
 The whole Java file is available  <a href="{{'/static/vaadin/MyUI.java' | prepend: site.baseurl }}">here</a>, under a "free as in free beer" license. The surounding project can be build with the Eclipse Vaadin Project Wizard.
 
 
-
+Many thanks to <a href="https://vaadin.com/web/enver/home">Enver Haase</a> for the code review.

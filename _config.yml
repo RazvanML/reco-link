@@ -24,7 +24,7 @@ redcarpet:
 
 paginate: 10
 paginate_path: ":num"
-baseurl: ""
+baseurl: "test"
 
 
 
@@ -39,6 +39,6 @@ disqus_shortname: "razvanpopovici"
 
 #url: "http://blog.rainyalley.com"
 #imgrepo: "http://blog.rainyalley.com/static/img"
-url: "http://10.0.0.138:4001"
-imgrepo: "http://10.0.0.138:4001/static/img"
+#url: "http://10.0.0.138:4001"
+#imgrepo: "http://10.0.0.138:4001/static/img"
 

@@ -196,4 +196,4 @@ mod tests {
 }  
 ```
 
-My objective was to perform the partition in place. The code breaks the vector in three partitions: all the elements smaller than the pivot at start, the elements larger than the pivot at the end of the vector and the middle, the elements equal to the pivot. This quaranteed that the produced partitions are always smaller and we don't run in an infinite loop.
+My objective was to partition in place. The code breaks the vector in three partitions: all the elements smaller than the pivot at start, the elements larger than the pivot at the end of the vector and the middle, the elements equal to the pivot. It quarantes that the produced partitions are always smaller and we don't run in an infinite loop.

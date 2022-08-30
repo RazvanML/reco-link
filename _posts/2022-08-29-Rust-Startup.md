@@ -201,3 +201,5 @@ My objective was to partition in place. The code breaks the vector in three part
 The algorithm is supposed to be <a href="https://en.wikipedia.org/wiki/Cache-oblivious_algorithm"> catche oblivious</a>. At any point there are at most three active memory pages, all accessed linearily.
 
 Would be interesting to compare this to performance of other languages in similar conditions.
+
+Parallelization of the code can work if we call the first recursion of sort in a thread pool. Still, we don't get a good <a href="http://parallelcomp.github.io/isoefficiency.pdf">isoefficiency</a>, since the first partition has to run in a single thread. Also it is possible that other threads end faster and at the end we are left with few worker threads.

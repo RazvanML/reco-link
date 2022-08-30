@@ -81,7 +81,7 @@ mod tests {
 }
 ```
 
-Upon failing the test, the need to debug the code becomes evident. Here is where I lost interest for IntelliJ Community version. Getting debugging capability would require the paid version of it, or paid version of CLion.
+Upon failing the test, the need to debug the code becomes evident. Here is where I lost interest for IntelliJ Community version. Getting debugging capability would require the paid version.
 
 Clearly the partitioning function was buggy, here is the version after debugging:
 
@@ -199,3 +199,5 @@ mod tests {
 My objective was to partition in place. The code breaks the vector in three partitions: all the elements smaller than the pivot at start, the elements larger than the pivot at the end of the vector and the middle, the elements equal to the pivot. It quarantes that the produced partitions are always smaller and we don't run in an infinite loop.
 
 The algorithm is supposed to be <a href="https://en.wikipedia.org/wiki/Cache-oblivious_algorithm"> catche oblivious</a>. At any point there are at most three active memory pages, all accessed linearily.
+
+Would be interesting to compare this to performance of other languages in similar conditions.

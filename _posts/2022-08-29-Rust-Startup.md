@@ -11,6 +11,8 @@ Installing Rust on Windows was quick and easy. I've just ran the <a href="https:
 
 Giving a try for Quicksort:
 
+<!--more-->
+
 ```Rust
 use std::vec;
 

@@ -29,7 +29,16 @@ Tools, board manager, search for ESP8266 install version 3.x
 
 Choose WeMos D1 R1 from the board list if you run the version 2.x of the library, or LOLIN (WeMOS) D1 R1 if you have  3.x version of the library.
 
-```cd ~/.arduino15/packages/esp8266/tools/python/3.7.2-post1
+```
+cd ~/.arduino15/packages/esp8266/tools/python/3.7.2-post1
 rm python 
 ln -s  /usr/bin/python3 python
+
 ```
+
+
+ArduinoStudio.png
+SelectBoard.png
+USBSerialConsole.png
+Preferences.png
+/successfulCompileAndUpdate.png

@@ -32,9 +32,31 @@ rm python
 ln -s  /usr/bin/python3 python
 ```
 
+<figure>
+    <img src="{{'/static/robot/ArduinoStudio.png' | prepend: site.baseurl }}" 
+    alt='' />
+    <figcaption></figcaption>
+</figure>
 
-ArduinoStudio.png
-SelectBoard.png
-USBSerialConsole.png
-Preferences.png
-/successfulCompileAndUpdate.png
+<figure>
+    <img src="{{'/static/robot/SelectBoard.png' | prepend: site.baseurl }}" 
+    alt='' />
+    <figcaption></figcaption>
+</figure>
+<figure>
+    <img src="{{'/static/robot/USBSerialConsole.png' | prepend: site.baseurl }}" 
+    alt='' />
+    <figcaption></figcaption>
+</figure>
+<figure>
+    <img src="{{'/static/robot/Preferences.png' | prepend: site.baseurl }}" 
+    alt='' />
+    <figcaption></figcaption>
+</figure>
+<figure>
+    <img src="{{'/static/robot/successfulCompileAndUpdate.png' | prepend: site.baseurl }}" 
+    alt='' />
+    <figcaption></figcaption>
+</figure>
+
+

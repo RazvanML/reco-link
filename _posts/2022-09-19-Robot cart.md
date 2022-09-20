@@ -37,13 +37,101 @@ Here is the step by step assembly and the sequence of deploying software.
 <figure>
     <img src="{{'/static/robot/IMG_1078.JPG' | prepend: site.baseurl }}" 
     alt='The servo for ultrasound mount' />
-    <figcaption>The ultrasound mount top view</figcaption>
+    <figcaption>The ultrasound mount servo top view</figcaption>
 </figure>
 
 <figure>
     <img src="{{'/static/robot/IMG_1079.JPG' | prepend: site.baseurl }}" 
     alt='The servo for ultrasound mount' />
-    <figcaption>The ultrasound mount bottom view</figcaption>
+    <figcaption>The ultrasound mount servo bottom view</figcaption>
+</figure>
+
+<figure>
+    <img src="{{'/static/robot/IMG_1080.JPG' | prepend: site.baseurl }}" 
+    alt='The ultrasound mount' />
+    <figcaption>The ultrasound mount view from behind</figcaption>
+</figure>
+
+
+<figure>
+    <img src="{{'/static/robot/IMG_1081.JPG' | prepend: site.baseurl }}" 
+    alt='The ultrasound mount' />
+    <figcaption>The ultrasound mount front view</figcaption>
+</figure>
+
+
+<figure>
+    <img src="{{'/static/robot/IMG_1082.JPG' | prepend: site.baseurl }}" 
+    alt='Motor control board' />
+    <figcaption>Motors control board</figcaption>
+</figure>
+
+<figure>
+    <img src="{{'/static/robot/IMG_1091.JPG' | prepend: site.baseurl }}" 
+    alt='Motor control board power output wiring bottom view' />
+    <figcaption>Motors control board  power output bottom view</figcaption>
+</figure>
+Note: do not use the large round hole, but the narrow rectangular hole near the bottom wheel. The breadboard will need to be installed above it.
+
+<figure>
+    <img src="{{'/static/robot/IMG_1083.JPG' | prepend: site.baseurl }}" 
+    alt='Motor control board power output wiring' />
+    <figcaption>Motors control board  power output wiring</figcaption>
+</figure>
+Polarity of the wires is essential. Otherwise it will either not work or it will reverse the direction of the affected motor.
+
+<figure>
+    <img src="{{'/static/robot/IMG_1085.JPG' | prepend: site.baseurl }}" 
+    alt='Power supply of the ultrasound sensor' />
+    <figcaption>Power supply of the ultrasound sensor</figcaption>
+</figure>
+
+<figure>
+    <img src="{{'/static/robot/IMG_1088.JPG' | prepend: site.baseurl }}" 
+    alt='Output power supply for the breadboard' />
+    <figcaption>Output power supply for the breadboard</figcaption>
+</figure>
+
+<figure>
+    <img src="{{'/static/robot/IMG_1089.JPG' | prepend: site.baseurl }}" 
+    alt='Breadboard power wires.' />
+    <figcaption>Breadboard power wires.</figcaption>
+</figure>
+I've taped together all adjacent connectors, will have to worry less about one connector leaving its place.
+
+
+
+<figure>
+    <img src="{{'/static/robot/IMG_1090.JPG' | prepend: site.baseurl }}" 
+    alt='Power wires layout' />
+    <figcaption>Power wires layout.</figcaption>
+</figure>
+
+
+<figure>
+    <img src="{{'/static/robot/IMG_1094.JPG' | prepend: site.baseurl }}" 
+    alt='Connecting the motor control' />
+    <figcaption>Connecting the motor control.</figcaption>
+</figure>
+
+<figure>
+    <img src="{{'/static/robot/IMG_1096.JPG' | prepend: site.baseurl }}" 
+    alt='Connecting the motor control' />
+    <figcaption>Connecting the motor control.</figcaption>
+</figure>
+
+<figure>
+    <img src="{{'/static/robot/IMG_1094.JPG' | prepend: site.baseurl }}" 
+    alt='Connecting the motor control' />
+    <figcaption>Connecting the motor control.</figcaption>
+</figure>
+
+Disregard my layout of colors. I've figured out I've connected a few of them wrong; you can debug upon deploying the software to the board. Only meed to make sure the power cables are right, I won't risk applying power to the wrong terminals or causing a shortcircuit of the battery.
+
+<figure>
+    <img src="{{'/static/robot/IMG_1098.JPG' | prepend: site.baseurl }}" 
+    alt='Added an additional nut as an additional raiser for the Arduino board, so that the power cables are not compressed against it' />
+    <figcaption>Added an additional nut as an additional raiser for the Arduino board, so that the power cables are not compressed against it</figcaption>
 </figure>
 
 

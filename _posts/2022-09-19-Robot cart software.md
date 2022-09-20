@@ -58,6 +58,8 @@ ln -s  /usr/bin/python3 python
     alt='' />
     <figcaption></figcaption>
 </figure>
+
+Successful compile and deploy:
 ```
 Writing at 0x0002c000... (85 %)
 Writing at 0x00030000... (92 %)
@@ -70,6 +72,7 @@ Hard resetting via RTS pin...
 ```
 
 Unsuccessful deploy, due to failure to connect:
+
 ```
 Global variables use 28472 bytes (34%) of dynamic memory, leaving 53448 bytes for local variables. Maximum is 81920 bytes.
 esptool.py v3.0

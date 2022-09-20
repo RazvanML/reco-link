@@ -58,5 +58,54 @@ ln -s  /usr/bin/python3 python
     alt='' />
     <figcaption></figcaption>
 </figure>
+```
+Writing at 0x0002c000... (85 %)
+Writing at 0x00030000... (92 %)
+Writing at 0x00034000... (100 %)
+Wrote 295664 bytes (215420 compressed) at 0x00000000 in 4.9 seconds (effective 486.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+```
+
+Unsuccessful deploy, due to failure to connect:
+```
+Global variables use 28472 bytes (34%) of dynamic memory, leaving 53448 bytes for local variables. Maximum is 81920 bytes.
+esptool.py v3.0
+Serial port /dev/ttyUSB0
+Traceback (most recent call last):
+  File "/home/raz/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/pyserial/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raz/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/upload.py", line 66, in <module>
+    esptool.main(cmdline)
+  File "/home/raz/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/esptool/esptool.py", line 3551, in main
+    esp = chip_class(each_port, initial_baud, args.trace)
+  File "/home/raz/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/esptool/esptool.py", line 271, in __init__
+    self._port = serial.serial_for_url(port)
+  File "/home/raz/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/pyserial/serial/__init__.py", line 90, in serial_for_url
+    instance.open()
+  File "/home/raz/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/pyserial/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+the selected serial port serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+ does not exist or your board is not connected
+Board at /dev/ttyUSB0 is not available
+```
+
+Unsuccessful due to compile errors:
+```
+/home/raz/arduino/4-Arduino Code/1.goAhead/1.goAhead.ino: In function 'void goAhead()':
+1.goAhead:74:2: error: 'unknownsymbol' was not declared in this scope
+   74 |  unknownsymbol();
+      |  ^~~~~~~~~~~~~
+exit status 1
+'unknownsymbol' was not declared in this scope
+```
 
 

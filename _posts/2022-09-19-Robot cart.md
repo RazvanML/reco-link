@@ -134,4 +134,11 @@ Disregard my layout of colors. I've figured out I've connected a few of them wro
     <figcaption>Added an additional nut as an additional raiser for the Arduino board, so that the power cables are not compressed against it</figcaption>
 </figure>
 
+Once you are done with wiring, the vehicle is ready for the software upload.
+
+No batteries are required for testing. Make sure that the vehicle is immobilized, the wheels don't touch the table.
+
+To start testing, connect the micro USB 2 cable (included) to the Arduino card and your PC.
+
+
 

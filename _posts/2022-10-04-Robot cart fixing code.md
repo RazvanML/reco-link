@@ -1,4 +1,5 @@
-ayout: post
+---
+Layout: post
 title: Robot cart
 tags: Arduino toy wireless
 categories: Arduino

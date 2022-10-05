@@ -9,9 +9,9 @@ After assembling <a href="https://www.aliexpress.com/item/3256802871526756.html"
 
 <!--more-->
 
-The main mistake in the original code is that the PWM output has a range of 0 (0 voltage) to 255 (1 voltage). The assumption was that PWM goes from 0 to 1024 (that may be true for other microcontrollers but not ESP8266) with 400 the starting value. 
+The main mistake in the original code is that the PWM output has a range of 0 (0 voltage) to 255 (1 voltage). The assumption was that PWM goes from 0 to 1024 (that may be true for older releases of ESP8266) with 400 the starting value. 
 
-A second mistake was fixing the turns. By pressing the buttons in the corners of the remote control. In this case the digitalWrite was used with the intention of analogWrite.
+A second mistake was fixing the turns, by pressing the buttons in the corners of the remote control. In this case the digitalWrite was used with the intention of analogWrite.
 
 Below the code:
 

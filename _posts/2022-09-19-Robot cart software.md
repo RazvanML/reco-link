@@ -20,9 +20,10 @@ I've installed the <a href="https://downloads.arduino.cc/arduino-nightly-linux64
 
 First you must make sure the IDE is configured with the board. I've received a ESP8266 board which is not supported out of the box in Android Studio.
 
+Set the following at Files / Preferences / Additional Boards Manager URLs:
 ``http://arduino.esp8266.com/stable/package_esp8266com_index.json``
 
-Tools, board manager, search for ESP8266 install version 3.x
+Then go to Tools, Board manager, search for ESP8266 install version 3.x
 
 Choose WeMos D1 R1 from the board list if you run the version 2.x of the library, or LOLIN (WeMOS) D1 R1 if you have  3.x version of the library.
 

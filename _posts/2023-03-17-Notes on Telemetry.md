@@ -1105,7 +1105,7 @@ volumes:
 ```
 
 Some notes:
-* I could not plot the attribute "value" from Jaeger. The only plotable metric from Jaeger is the segment duration.
+* I could not plot the attribute "value" from Jaeger. The only plotable metric from Jaeger is the segment duration. https://community.grafana.com/t/how-to-plot-a-span-attribute-in-jaeger-data-source/83871
 * The dashboard has an inertia of 20-30 seconds when plotting the segments. The metrics look live. Explaining this as ElasticSearch has eventual persistency.
 * Would be interesting to find a way to transmit the metrics and traces through UDP. This would greatly release the microcontrollers of the need to maintain additional TCP connections. Eventually this can be achieved by getting the telemetry data by UDP to a gateway which will further transmit using TCP.
 * Would be interesting to see how Otel-Collector saves to Postgres. (I read this before but I don't remember where).

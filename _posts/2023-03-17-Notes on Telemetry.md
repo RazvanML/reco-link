@@ -8,7 +8,7 @@ categories: Open Telemetry
 Notes after learning some stuff on OpenTelemetry.
 
 <figure>
-    <img src="{{'/static/img/dashboard.png' | prepend: site.baseurl  }}" alt='Gafana dashboard' />
+    <img src="{{'/static/img/dashboard.png' | prepend: site.baseurl  }}" alt='Gafana dashboard' style="width:600px"/>
     <figcaption>Grafana dashboard</figcaption>
 </figure>
 
